@@ -1,0 +1,48 @@
+<!-- BEGIN: main -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td style="padding-bottom: 2px;">
+            <form action="index.php" method="post" name="DetailView" id="form">
+                <input type="hidden" name="module" value="Posts">
+                <input type="hidden" name="record" value="{POST.id}">
+                <input type="hidden" name="isDuplicate" value="0">
+                <input type="hidden" name="action" value="{ACTION}">
+                <input type="hidden" name="return_module" value="{RETURN_MODULE}">
+                <input type="hidden" name="return_action" value="{RETURN_ACTION}">
+                <input type="hidden" name="thread_id" value="{POST.thread_id}">
+                <input type="hidden" name="return_record" value="{POST.thread_id}">
+                <input type="hidden" name="record_perform" value="">
+                <input type="hidden" name="return_layout" value="">
+                <input type="hidden" name="return_panel" value="">
+                <input type="hidden" name="reply" value="">
+                <input type="hidden" name="quote" value="">
+				<button type="button" class="input-button input-outer" name="{ID}" onClick="ForumPosts.reply(this.form, '{POST.thread_id}', '{POST.id}')"><div class="input-icon icon-return left"></div><span class="input-label">{MOD.LBL_REPLY_TO_POST}</span></button>
+                <button type="button" class="input-button input-outer" name="{ID}1" onClick="ForumPosts.quote(this.form, '{POST.thread_id}', '{POST.id}')"><div class="input-icon icon-return left"></div><span class="input-label">{MOD.LBL_QUOTE_POST}</span></button>
+    <!-- BEGIN: owner_or_admin -->
+                <button type="button" class="input-button input-outer" name="{ID}2" onClick="ForumPosts.edit(this.form, '{POST.thread_id}', '{POST.id}')"><div class="input-icon icon-edit left"></div><span class="input-label">{APP.LBL_EDIT_BUTTON_LABEL}</span></button>
+				<button type="button" class="input-button input-outer" onclick="if(confirm('{APP.NTC_DELETE_CONFIRMATION}')) ForumPosts.delete(this.form, '{POST.thread_id}', '{POST.id}'); else return false;" name="Delete"><div class="input-icon icon-delete left"></div><span class="input-label">{APP.LBL_DELETE_BUTTON_LABEL}</span></button>
+    <!-- END: owner_or_admin -->
+            </form>
+        </td>
+    </tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" class="tabDetailView">
+    <tr>
+	<td rowspan="3" class="tabDetailViewDF" width="1%"><img src="{POST.image_url}" style="max-width:75px; max-height:90px; border: 1px solid black; vertical-align: bottom" alt=""></td>
+    <td class="tabDetailViewDF"><slot><b>{POST.title}</b></slot></td>
+    <td width="30%" class="tabDetailViewDF"><slot>{POST.created_by_user}&nbsp;:&nbsp;{POST.date_entered}&nbsp;{stickydisplay}</slot></td>
+    </tr><tr>
+    <td colspan="2"  style="background-color: #ffffff; padding-left: 3mm; padding-right: 3mm; " ><slot>
+      <p>{POST.description_html}</p>
+    </td>
+    </tr>
+    <!-- BEGIN: modified -->
+    <tr>
+    <td class="tabDetailViewDF"><slot>&nbsp;&nbsp;</slot></td>
+    <td class="tabDetailViewDF"><slot>{MOD.LBL_MODIFIED_USER_ID}&nbsp;{POST.modified_user}&nbsp;:&nbsp;{POST.date_modified}</slot></td>
+    </tr>
+    <!-- END: modified -->
+</table>
+<br>
+<!-- END: main -->

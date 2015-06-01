@@ -1,0 +1,50 @@
+<!-- BEGIN: main -->
+<script type="text/javascript">
+	var mapping_params = {mappings};
+function csv_saved_mapping_change(select) {
+	var id = select.value;
+	if (id) {
+		$('csv_has_header').checked = mapping_params[id].has_header != 0;
+		try {
+			$('csv_delimiter-' + mapping_params[id].delimiter).checked = true;
+		} catch (e) {
+		}
+	}
+}
+</script>
+
+<fieldset>
+	<legend>{MOD_STRINGS.LBL_MAPPING}</legend>
+	<p>
+		<select name="csv_saved_mapping" onchange="csv_saved_mapping_change(this);">
+			<option value="">-- {MOD_STRINGS.LBL_USE_CUSTOM_MAPPING} --</option>
+			<!-- BEGIN: mapping -->
+			<option value="{MAPPING.id}">{MAPPING.name}</option>
+			<!-- END: mapping -->
+		</select>
+	</p>
+	<fieldset id="custom_mapping_set">
+		<legend>{MOD_STRINGS.LBL_CUSTOM_MAPPING_OPTIONS}</legend>
+		<table border="0"><tr>
+			<td width="100">{MOD_STRINGS.LBL_CSV_DELIMITER}&nbsp;<span class="required" title="{MOD_STRINGS.LBL_REQUIRED}">*</span></td>
+			<td><label>
+				<input type="radio" id="csv_delimiter-comma" name="csv_delimiter" value="comma" checked="checked">&nbsp;{MOD_STRINGS.LBL_COMMA}
+			</label>
+			&nbsp;
+			<label>
+				<input type="radio" id="csv_delimiter-tab" name="csv_delimiter" value="tab">&nbsp;{MOD_STRINGS.LBL_TAB}
+			</label>
+			&nbsp;
+			<label>
+				<input type="radio" id="csv_delimiter-semicolon" name="csv_delimiter" value="semicolon">&nbsp;{MOD_STRINGS.LBL_SEMICOLON}
+			</label>
+		</td></tr>
+		<tr><td>
+			<label for="csv_has_header">{MOD_STRINGS.LBL_HAS_HEADER}</label>
+		</td><td>
+			<input type="checkbox" id="csv_has_header" name="csv_has_header" checked="checked" value="1">
+		</td></tr>
+		</table>
+	</fieldset>
+</fieldset>
+<!-- END: main -->

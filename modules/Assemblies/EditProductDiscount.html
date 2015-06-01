@@ -1,0 +1,132 @@
+<!-- BEGIN: main -->
+<form name="EditView">
+<input id="type" type="hidden">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tabForm">
+<tr>
+<td>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td class="dataField" nowrap="nowrap"><select onchange="switch_form(this.value)" id="discount_type" tabindex="1">{TYPE_OPTIONS}</select></td>
+		</tr>
+		</tbody>
+		<tbody id="std" style="display:none">
+		<tr>
+			<td class="dataField" nowrap="nowrap">
+				<input id="discount_name" tabindex="1" readonly type="text" size="40" value="{DISCOUNT_NAME}">
+				<input id="discount_id" type="hidden" value="{DISCOUNT_ID}">
+				<input title="{APP.LBL_SELECT_BUTTON_TITLE}" accessKey="{APP.LBL_SELECT_BUTTON_KEY}" type="button"
+					tabindex='1' class="button" value='{APP.LBL_SELECT_BUTTON_LABEL}'
+					onclick='open_popup("Discounts", 600, 400, "", true, false, {popup_request_data});'>
+			</td>
+		</tr>
+		</tbody>
+		<tbody id="percentage" style="display:none">
+		<tr>
+			<td class="dataField" nowrap="nowrap">
+				<input id="rate" tabindex="1" type="text" value="{RATE}" size="5"> %
+			</td>
+		</tr>
+		</tbody>
+		<tbody id="fixed" style="display: none">
+		<tr>
+			<td class="dataField" nowrap="nowrap">
+				<input id="amount" tabindex="1" type="text" value="{AMOUNT}" size="5">
+			</td>
+		</tr>
+		</tbody>
+		<tbody >
+		<tr>
+			<td class="dataField" nowrap="nowrap">
+				<input type="button" class="button" value="{APP.LBL_SAVE_BUTTON_LABEL}" onclick="transfer_values()">
+				<input type="button" class="button" value="{APP.LBL_CANCEL_BUTTON_LABEL}" onclick="window.close()">
+			</td>
+		</tr>
+		</tbody>
+	</table>
+</td>
+</tr>
+</table>
+</form>
+
+<script type="text/javascript">
+	function set_discount_return(data) {
+		var values = data.name_to_value_array;
+		for (var i in values) {
+			values[i] = values[i].replace(/&amp;/gi,'&').replace(/&lt;/gi,'<').replace(/&gt;/gi,'>').replace(/&#039;/gi,'\'').replace(/&quot;/gi,'"');
+		}
+		for(idx in values)
+			values[idx] = html_unescape(values[idx]);
+		if (values.type == 'percentage') {
+			values.discount_name += ' (' + values.rate + '%)';
+			document.getElementById('rate').value = values.rate;
+			document.getElementById('amount').value = 0;
+		} else {
+			values.discount_name += ' (' + values.amount + ')';
+			document.getElementById('rate').value = 0;
+			document.getElementById('amount').value = values.amount;
+		}
+		set_return(data);
+		if (values.type == 'percentage') {
+			document.getElementById('rate').value = values.rate;
+			document.getElementById('amount').value = 0;
+		} else {
+			document.getElementById('rate').value = 0;
+			document.getElementById('amount').value = values.amount;
+		}
+	}
+
+function switch_form(type, noclear) {
+	var sections = ['percentage', 'fixed', 'std'];
+	if (!noclear) {
+		document.getElementById('type').value='';
+		document.getElementById('discount_name').value='';
+		document.getElementById('discount_id').value='';
+		document.getElementById('amount').value='0';
+		document.getElementById('rate').value='0';
+	}
+	if (type == 'percentage' || type == 'fixed') {
+		document.getElementById('type').value = type;
+	}
+	for (var i = 0; i < sections.length; i++) {
+		var section = document.getElementById(sections[i]);
+		if (section) {
+			section.style.display = (section.id == type) ? '' : 'none';
+		}
+	}
+}
+
+function transfer_values()
+{
+	var id = '{ID}';
+	var start = '{START}';
+	var target_module = '{TARGET_MODULE}';
+	if (document.getElementById('discount_type').value == 'percentage') {
+		document.getElementById('discount_name').value = document.getElementById('rate').value + '%';
+	} else if (document.getElementById('discount_type').value == 'fixed') {
+		document.getElementById('discount_name').value = document.getElementById('amount').value;
+	}
+	if (document.getElementById('discount_name').value == '') {
+		window.opener.document.getElementById(target_module + '_' + id+'_name').innerHTML = '{APP.LBL_NONE}';
+	} else {
+		window.opener.document.getElementById(target_module + '_' + id+'_name').innerHTML = document.getElementById('discount_name').value;
+	}
+	window.opener.document.getElementById(target_module + '_' + start).value = document.getElementById('type').value;
+	start++;
+	window.opener.document.getElementById(target_module + '_' + start).value = document.getElementById('discount_name').value;
+	start++;
+	window.opener.document.getElementById(target_module + '_' + start).value = document.getElementById('discount_id').value;
+	start++;
+	if (document.getElementById('type').value == 'percentage') {
+		window.opener.document.getElementById(target_module + '_' + start).value = document.getElementById('rate').value;
+	} else {
+		window.opener.document.getElementById(target_module + '_' + start).value = document.getElementById('amount').value;
+	}
+	start++;
+	window.close();
+}
+
+switch_form(document.getElementById('discount_type').value, true);
+</script>
+
+<!-- END: main -->

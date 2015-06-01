@@ -1,0 +1,18 @@
+<!-- BEGIN: main -->
+<!-- BEGIN: message -->
+{MESSAGE}
+<!-- END: message -->
+
+<form action="index.php?module={MODULE}&amp;action=ImportDB&amp;step=pre_execute&amp;profile={PROFILE.name}"
+      method="post" id="importdb-preexecute-form">
+	<div>
+		{PREPARE}
+	</div>
+	<div style="margin-top:0.5em;">
+		<button type="submit" name="op" value="1" class="input-button input-outer">
+			<div class="input-icon left icon-accept"></div>
+			<span class="input-label">{MOD_STRINGS.LBL_CONTINUE}</span>
+		</button>
+	</div>
+</form>
+<!-- END: main -->

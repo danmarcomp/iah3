@@ -1,0 +1,98 @@
+<!-- $Id: Multy_picker.html 1512 2006-03-31 10:49:16Z sveta $ -->
+<!-- BEGIN: main -->
+<!-- BEGIN: SearchHeader -->
+
+<script type="text/javascript" src="{JS_PREFIX}modules/ProductCatalog/products.js{JS_SUFFIX}"></script>
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tabForm">
+<tr><td>
+
+<form action="index.php" method="post" name="popup_query_form" id="popup_query_form">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="dataLabel" noWrap>{MOD.LBL_SUPPORTED_ASSEMBLY_NAME}&nbsp;&nbsp;<input type=text size="20" name="name" class=dataField  value="{NAME}" /></td>
+		<td class="dataLabel" noWrap>{MOD.LBL_ACCOUNT_NAME}&nbsp;&nbsp;<input type=text size="20" name="account_name" class=dataField  value="{ACCOUNT_NAME}" /></td>
+		<td class="dataLabel" noWrap></td>
+		<td align="right">
+			<input type="hidden" name="action" value="Popup"/>
+			<input type="hidden" name="query" value="true"/>
+			<input type="hidden" name="module" value="{MODULE_NAME}" />
+			<input type="hidden" name="func_name" value="" />
+			<input type="hidden" name="multy" value="true" />
+			<input type="hidden" name="request_data" value="{request_data}" />
+			<input type="hidden" name="inline" value="{INLINE}" />
+			<input type="hidden" name="hide_clear_button" value="{hide_clear_button}" />
+			<input type="hidden" name="populate_parent" value="false" />
+			<input type="hidden" name="record_id" value="" />
+			<input type="hidden" name="with_no_subcontract" value="{WITH_NO_SUBCONTRACT}" />
+			<input type="hidden" name="with_no_account" value="{WITH_NO_ACCOUNT}" />
+			<input type="hidden" name="with_no_project" value="{WITH_NO_PROJECT}" />
+			<input class="button" type="submit" name="button" value="{APP.LBL_SEARCH_BUTTON_LABEL}"/>
+		</td>
+		<tr>
+			<td class="dataLabel" noWrap>{MOD.LBL_PRODUCT_CATEGORY}&nbsp;&nbsp;<select name="product_category_id" onchange="fill_product_types(this.value,'product_type_id')">{OPT_CAT}</select></td>
+			<td class="dataLabel" noWrap>{MOD.LBL_PRODUCT_TYPE}&nbsp;&nbsp;<select name="product_type_id" id="product_type_id">{OPT_TYPE}</select></td>
+		</tr>
+	</table>
+
+</form>
+</td>
+</tr>
+</table>
+<!-- END: SearchHeader -->
+
+<!-- BEGIN: list_nav_row -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="listView">
+{PAGINATION}
+<!-- END: list_nav_row -->
+<tr height="20">
+	<td scope="col" width="1%" class="listViewThS1" nowrap="nowrap"><input type="checkbox" class="checkbox" onclick="check_all(this.checked)"></td>
+	<td scope="col" width="35%" class="listViewThS1" nowrap="nowrap"><slot><a href="{ORDER_BY}name" class="listViewThLinkS1">{MOD.LBL_LIST_NAME}{arrow_start}{name_arrow}{arrow_end}</a></slot></td>
+	<td scope="col"  width="5%" class="listViewThS1" NOWRAP><slot><a href="{ORDER_BY}quantity" class="listViewThLinkS1">{MOD.LBL_LIST_QUANTITY}{arrow_start}{quantity_arrow}{arrow_end}</a></slot></td>
+	<td scope="col"  width="20%" class="listViewThS1" NOWRAP><slot><a href="{ORDER_BY}account_name" class="listViewThLinkS1">{MOD.LBL_LIST_ACCOUNT_NAME}{arrow_start}{account_name_arrow}{arrow_end}</a></slot></td>
+	<td scope="col"  width="20%" class="listViewThS1" NOWRAP><slot><a href="{ORDER_BY}product_category_id" class="listViewThLinkS1">{MOD.LBL_LIST_PRODUCT_CATEGORY}{arrow_start}{product_category_id_arrow}{arrow_end}</a></slot></td>
+	<td scope="col"  width="20%" class="listViewThS1" NOWRAP><slot><a href="{ORDER_BY}product_type_id" class="listViewThLinkS1">{MOD.LBL_LIST_PRODUCT_TYPE}{arrow_start}{product_type_id_arrow}{arrow_end}</a></slot></td>
+</tr>
+<!-- BEGIN: row -->
+<tr height="20"
+	onmouseover="setPointer(this, '{CONTACT.ID}', 'over', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');"
+	onmouseout="setPointer(this, '{CONTACT.ID}', 'out', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');"
+	onmousedown="setPointer(this, '{CONTACT.ID}', 'click', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');">
+		<td scope='row' valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><input type="checkbox" class="checkbox" name="selected_asset" value="{SupportedAssemblies.ID}"></td>
+		<td scope='row' valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><slot>
+			<a href="#" onclick='send_back("SupportedAssemblies", "{SupportedAssemblies.ID}"); return false;' class="listViewTdLinkS1">{SupportedAssemblies.NAME}</a>
+		</slot></td>
+		<td valign=TOP  class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{SupportedAssemblies.QUANTITY}</td>
+		<td valign=TOP  class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{SupportedAssemblies.ACCOUNT_NAME}</td>
+		<td valign=TOP  class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{SupportedAssemblies.PRODUCT_CATEGORY_NAME}</td>
+    	<td valign=TOP  class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{SupportedAssemblies.PRODUCT_TYPE_NAME}</td>
+</tr>
+<tr><td colspan="20" class="listViewHRS1"></td></tr>
+<!-- END: row -->
+{ASSOCIATED_JAVASCRIPT_DATA}
+
+<script type="text/javascript">
+    function check_all(checked)
+    {
+        var checkboxes = document.getElementsByName('selected_asset');
+        for (var i=0;i<checkboxes.length;i++) {
+            checkboxes[i].checked = checked;
+        }
+    }
+    function add_selected()
+    {
+        var checkboxes = document.getElementsByName('selected_asset');
+        var n = 0;
+        window.opener.document.close_popup = false;
+        for (var i=0;i<checkboxes.length;i++) {
+            if (checkboxes[i].checked) {
+                send_back('SupportedAssemblies',checkboxes[i].value);
+                checkboxes[i].checked = false;
+                n++;
+            }
+        }
+    }
+
+</script>
+</table>
+<!-- END: main -->

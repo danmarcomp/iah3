@@ -1,0 +1,329 @@
+<!--
+/*********************************************************************************
+ * The contents of this file are subject to the SugarCRM Public License Version
+ * 1.1.3 ("License"); You may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at http://www.sugarcrm.com/SPL
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.  See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * All copies of the Covered Code must include on each user interface screen:
+ *    (i) the "Powered by SugarCRM" logo and
+ *    (ii) the SugarCRM copyright notice
+ * in the same form as they appear in the distribution.  See full license for
+ * requirements.
+ *
+ * The Original Code is: SugarCRM Open Source
+ * The Initial Developer of the Original Code is SugarCRM, Inc.
+ * Portions created by SugarCRM are Copyright (C) 2004-2006 SugarCRM, Inc.;
+ * All Rights Reserved.
+ * Contributor(s): ______________________________________.
+ ********************************************************************************/
+/*********************************************************************************
+ * {APP.LBL_CURRENCY_SYM}Header: /cvsroot/sugarcrm/sugarcrm/modules/Contacts/EditView.html,v 1.22 2004/07/16 04:04:42 sugarclint Exp {APP.LBL_CURRENCY_SYM}
+ ********************************************************************************/
+-->
+<!-- BEGIN: main -->
+<!-- BEGIN: error -->
+<span class="error">{ERROR}</span>
+<!-- END: error -->
+
+
+			<form enctype="multipart/form-data" name="MailMerge" method="POST" action="index.php">
+			<input type="hidden" name="module" value="MailMerge">
+			<input type="hidden" name="step" id="step" value="{STEP}">
+			<input type="hidden" name="action" value="index">
+			<input type="hidden" name="return_module" value="{RETURN_MODULE}">
+			<input type="hidden" name="return_id" value="{RETURN_ID}">
+			<input type="hidden" name="return_action" value="{RETURN_ACTION}">		
+			<input type="hidden" name="selected_objects" id="selected_objects">
+<p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabForm">
+<tr>
+<td>
+	<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	<th align="left" class="dataLabel" colspan="2"><h4 class="">{MAIL_MERGE_HEADER_STEP_2}</h4></th>
+	</tr>
+	<tr><td><slot>&nbsp;</slot></td></tr>
+	<tr>
+	<td><input type='text' id="searchText" name="searchText"></td>
+	<td><input type="button" id="searchSubmit" value="Search" onClick="search();"></td>
+	</tr>
+	</table>
+	<table>
+	<tr>
+		<td>
+		{MAILMERGE_PREV}
+		<span id="result_count"></span>
+		{MAILMERGE_NEXT}
+		</td>
+		</tr>
+	<tr>
+	<td class="dataField" colspan='1'>
+	
+		<table border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="dataLabel">Available
+					<table>
+						<tr>
+							<td><slot><select id="display_objs" name="display_objs[]" size="10" multiple="multiple" ></select></slot></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+	{MAILMERGE_LEFT_TO_RIGHT}
+	<br>
+	{MAILMERGE_RIGHT_TO_LEFT}
+	</td>
+	<td class="dataField" colspan='1'>
+	
+		<table border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="dataLabel">Selected
+					<table>
+						<tr>
+							<td><slot><select id="selected_objs" name="selected_objs[]" size="10" multiple="multiple" >{MAILMERGE_PRESELECTED_OBJECTS}</select></slot></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</td>
+	</tr>
+</table>
+</td>
+</tr>
+<tr><td>{MAIL_MERGE_CONTAINS_CONTACT_INFO}</td></tr>
+</table>
+</p>
+<p><table width="100%" cellpadding="2" cellspacing="0" border="0"><tr> 
+	<td align="left"><input id="prevButton" title="{MOD.LBL_BACK}" accessKey="" class="button" type="submit" name="button" value="  {MOD.LBL_BACK}  "  onclick="this.form.step.value='1'; return true;"></td>
+	<td align="right"><input id="nextButton" title="{MOD.LBL_NEXT}" accessKey="" class="button" type="submit" name="button" value="  {MOD.LBL_NEXT}  "  onclick="set_selected_items();return validateForm();"></td>
+</tr>
+</table>  </p>
+	</form>
+{JAVASCRIPT}
+<script type="text/javascript" src="include/jsolait/init.js?s={SUGAR_VERSION}&c={JS_CUSTOM_VERSION}"></script>
+<script type="text/javascript">{JSON_CONFIG_JAVASCRIPT}</script>
+<script type="text/javascript" src="include/javascript/jsclass_base.js?s={SUGAR_VERSION}&c={JS_CUSTOM_VERSION}"></script>
+<script type="text/javascript" src="include/javascript/jsclass_async.js?s={SUGAR_VERSION}&c={JS_CUSTOM_VERSION}"></script>
+
+<script>
+var module = "{MAILMERGE_MODULE}";
+var mOffset = 0;
+var max = 20;
+var mWhere = '';
+var orderBy = '';
+
+function ResponseObj()
+{
+}
+
+ResponseObj.prototype.response = function (result) 
+{	 
+	var prevButton = document.getElementById("prevButton");
+	var nextButton = document.getElementById("nextButton");
+	
+	var prevItems = document.getElementById("prevItems");
+	var nextItems= document.getElementById("nextItems");
+	var dispCount = max;
+	var dispMin = mOffset;
+	if(result.result_count < max)
+	{
+		dispCount = result.result_count;
+		nextItems.disabled = true;
+	}
+	if(result.result_count - max == mOffset)
+	{
+		nextItems.disabled = true;
+	}
+	else
+	{
+		nextItems.disabled = false;
+	}
+	if(mOffset == 0)
+	{
+		prevItems.disabled = true;
+	}
+	else
+	{
+		prevItems.disabled = false;
+	}
+	if(result.result_count > 0)
+	{
+		dispMin = mOffset + 1;
+	}
+	var spanText = "("+(dispMin) + " - " +(mOffset+dispCount) + " of " + result.result_count+")";
+	document.getElementById("result_count").innerHTML = spanText;
+	var displayObjs = document.getElementById("display_objs");
+	displayObjs.options.length = 0;
+	var isLeadOrContact = false;
+	if(module == 'Contacts' || module == 'Leads')
+	{
+		isLeadOrContact = true;
+	}
+	for (i = 0; i < result.entry_list.length; i++)
+	{
+		var id = '';
+		var name = '';
+		var name1 = '';
+		var name2 = '';
+		id = result.entry_list[i]['name_value_list'].id.value;
+		if(isLeadOrContact)
+		{
+			name1 = result.entry_list[i]['name_value_list'].first_name.value;
+			name2 = result.entry_list[i]['name_value_list'].last_name.value;
+		}
+		else
+		{
+			name1 = '';
+			name2 = result.entry_list[i]['name_value_list'].name.value;
+		}
+		name = name1 + ' ' + name2;
+		displayObjs.options[displayObjs.length] = new Option(name, id);
+	}
+	    
+   	prevButton.disabled = false;
+	nextButton.disabled = false;
+}
+function increaseOffset()
+{
+	mOffset += 20;
+}
+
+function decreaseOffset()
+{
+	mOffset -= 20;
+}
+
+function getObjects()
+{
+	var prevButton = document.getElementById("prevButton");
+	var nextButton = document.getElementById("nextButton");
+	
+	prevButton.disabled = true;
+	nextButton.disabled = true;
+	getOrderBy();
+
+	var query = {"module":module, "offset":mOffset, "where":mWhere, "max":max, "order_by":orderBy};
+	json_server_call('get_objects_from_module', query, [new ResponseObj(), 'response']);
+}
+
+function moveRight()
+{
+	var displayObjs =  document.getElementById("display_objs");
+	var selObjs = document.getElementById("selected_objs");
+	
+	for (i=0;i<displayObjs.options.length;i++)
+	{
+		if(displayObjs[i].selected)
+		{
+			var current = displayObjs.options[i];
+			selObjs.options.add(new Option(current.text, current.value));
+		}
+	}
+}
+
+function moveLeft()
+{
+	var selObjs = document.getElementById("selected_objs");
+	
+	for (i = selObjs.length - 1; i>=0; i--) {
+	try
+	{
+		if(selObjs.options[i].selected)
+		{
+			selObjs.remove(i);
+
+		}
+	}
+		catch(e){}
+		
+	}
+}
+
+function set_selected_items()
+{
+var selObjs = document.getElementById("selected_objs");
+
+var containsContactInfo = document.getElementById("contains_contact_info");
+var step = document.getElementById("step");
+var selected_objects = '';
+
+for(i=0; i < selObjs.options.length ;i++)
+{
+         selected_objects += selObjs.options[i].value+"="+selObjs.options[i].text.replace(/&/g, "##")+"&";
+}
+
+	document.MailMerge.selected_objects.value = selected_objects;
+//BEGIN CHANGE 38959 -- raagaard
+	if(containsContactInfo != null && containsContactInfo.options[containsContactInfo.selectedIndex].value)
+//END CHANGE 38959 -- raagaard
+	{
+		step.value = "3";
+	}
+	else
+	{
+		step.value = "4";
+	}
+
+}
+
+function search(searchText)
+{
+	var searchInput = document.getElementById("searchText");
+	searchText = searchInput.value;
+	var where = '';
+	if(searchText != '')
+	{
+		if(module == 'Contacts' || module == 'Leads')
+		{
+			where = module+".first_name like '%"+searchText+"%' OR "+module+".last_name like '%"+searchText+"%'";
+		}
+		else
+		{
+			where = module+".name like '"+searchText+"%'";
+		}
+	}
+	mWhere = where.toLowerCase();
+	getObjects();
+}
+
+function getOrderBy()
+{
+	var order = '';
+	if(module == 'Contacts' || module == 'Leads')
+	{
+		order = module+".last_name";
+	}
+	else
+	{
+		order = module+".name";
+	}
+	
+	orderBy = order.toLowerCase();
+}
+function validateForm()
+{
+	var selObjs = document.getElementById("selected_objs");
+	
+	if(selObjs.options.length > 0)
+	{
+		return true;
+	}
+	else
+	{
+		alert("Please select at least one item.");
+		return false;
+	}	
+}
+
+getObjects();
+
+</script>
+<!-- END: main -->

@@ -1,0 +1,136 @@
+<!--
+/*
+ * The contents of this file are subject to the SugarCRM Public License Version
+ * 1.1.3 ("License"); You may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at http://www.sugarcrm.com/SPL
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.  See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * All copies of the Covered Code must include on each user interface screen:
+ *    (i) the "Powered by SugarCRM" logo and
+ *    (ii) the SugarCRM copyright notice
+ * in the same form as they appear in the distribution.  See full license for
+ * requirements.
+ *
+ * The Original Code is: SugarCRM Open Source
+ * The Initial Developer of the Original Code is SugarCRM, Inc.
+ * Portions created by SugarCRM are Copyright (C) 2004-2006 SugarCRM, Inc.;
+ * All Rights Reserved.
+ * Contributor(s): ______________________________________.
+ */
+-->
+
+<!-- BEGIN: main -->
+
+<!-- BEGIN: SearchHeader -->
+<h2>{ACCOUNT_NAME}</h2>
+
+<table width="100%">
+	<tr>
+		<td width="50%" valign="top">
+			<h3>{MOD.LBL_ACCOUNT_BILLING_ADDRESS}</h3>
+	{BILLING_ADDRESS_STREET}<br>
+	{BILLING_ADDRESS_CITY} {BILLING_ADDRESS_STATE}&nbsp;&nbsp;{BILLING_ADDRESS_POSTALCODE}<br>
+	{BILLING_ADDRESS_COUNTRY}
+		</td>
+		<td width="50%" valign="top" align="right">
+			<h3>{MOD.LBL_ACCOUNT_SHIPPING_ADDRESS}</h3>
+	{SHIPPING_ADDRESS_STREET}<br>
+	{SHIPPING_ADDRESS_CITY} {SHIPPING_ADDRESS_STATE}&nbsp;&nbsp;{SHIPPING_ADDRESS_POSTALCODE}<br>
+	{SHIPPING_ADDRESS_COUNTRY}
+		</td>
+	</tr>
+</table>
+
+
+<form action="index.php" method="post" name="popup_query_form" id="popup_query_form">
+<input type="hidden" name="module" value="{MODULE_NAME}" />
+<input type="hidden" name="action" value="Popup" />
+<input type="hidden" name="query" value="true" />
+<input type="hidden" name="func_name" value="" />
+<input type="hidden" name="request_data" value="{request_data}" />
+<input type="hidden" name="populate_parent" value="false" />
+<input type="hidden" name="hide_clear_button" value="{hide_clear_button}" />
+<input type="hidden" name="metadata" value="popupChangeAddress"/>
+<input type="hidden" name="account_id" value="{ACCOUNT_ID}"/>
+<input type="hidden" name="mode" value="{MULTI_SELECT}" />
+
+
+<table class="tabDetailView" cellspacing="0" cellpadding="0" border="0" width="100%">
+	<tr>
+		<td class="tabDetailViewDL">
+			{MOD.LBL_COPY_PRIMARY_FROM}
+		</td>
+		<td class="tabDetailViewDF">
+<select name="copy_primary" onchange="update_value(this); update_popup();">
+	{COPY_PRIMARY}
+</select>
+</td></tr>
+<tr>
+		<td class="tabDetailViewDL">
+			{MOD.LBL_COPY_ALT_FROM}
+		</td>
+		<td class="tabDetailViewDF">
+<select name="copy_alt" onchange="update_value(this); update_popup();">
+	{COPY_ALT}
+</select>
+</td></tr></table>
+
+</form>
+<script type="text/javascript">
+	var radios = document.getElementsByName('set_alternate');
+	for (var i in radios) {
+		var radio = radios[i];
+		if (radio.value == '{SET_ALTERNATE}') {
+			radio.checked = true;
+			break;
+		}
+	}
+
+function update_value(elt) {
+	var form = $('popup_query_form');
+	var request_data = fetch_request_data();
+	if(! request_data.passthru_data)
+		request_data.passthru_data = {};
+	request_data.passthru_data[elt.name] = elt.value;
+	form.request_data.value = JSON.stringify(request_data);
+}
+</script>
+<!-- END: SearchHeader -->
+
+<!-- BEGIN: list_nav_row -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="listView">
+{PAGINATION}
+<!-- END: list_nav_row -->
+<tr height="20">
+<td scope="col" class="listViewThS1" NOWRAP>{CHECKALL}</td>
+<td scope="col" width="20%" class="listViewThS1" nowrap="nowrap"><a href="{ORDER_BY}last_name{END_ORDER_BY}" class="listViewThLinkS1">{MOD.LBL_LIST_CONTACT_NAME}{arrow_start}{last_name_arrow}{arrow_end}</a></td>
+<td scope="col" width="35%" class="listViewThS1" nowrap="nowrap"><a href="{ORDER_BY}primary_address_street{END_ORDER_BY}" class="listViewThLinkS1">{MOD.LBL_PRIMARY_ADDRESS}{arrow_start}{primary_address_street_arrow}{arrow_end}</a></td>
+<td scope="col" width="35%" class="listViewThS1" nowrap="nowrap"><a href="{ORDER_BY}alt_address_street{END_ORDER_BY}" class="listViewThLinkS1">{MOD.LBL_ALTERNATE_ADDRESS}{arrow_start}{alt_address_street_arrow}{arrow_end}</a></td>
+</tr>
+<!-- BEGIN: row -->
+<tr height="20"
+	onmouseover="setPointer(this, '{CONTACT.ID}', 'over', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');"
+	onmouseout="setPointer(this, '{CONTACT.ID}', 'out', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');"
+	onmousedown="setPointer(this, '{CONTACT.ID}', 'click', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');">
+<td class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}" valign='top'>{PREROW}</td>
+<td scope='row' valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{CONTACT.NAME}</td>
+<td valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">
+	<slot>{CONTACT.PRIMARY_ADDRESS_STREET}<br>
+	{CONTACT.PRIMARY_ADDRESS_CITY} {CONTACT.PRIMARY_ADDRESS_STATE}&nbsp;&nbsp;{CONTACT.PRIMARY_ADDRESS_POSTALCODE}<br>
+	{CONTACT.PRIMARY_ADDRESS_COUNTRY}</slot>
+</td>
+<td valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">
+	<slot>{CONTACT.ALT_ADDRESS_STREET}<br>
+	{CONTACT.ALT_ADDRESS_CITY} {CONTACT.ALT_ADDRESS_STATE}&nbsp;&nbsp;{CONTACT.ALT_ADDRESS_POSTALCODE}<br>
+	{CONTACT.ALT_ADDRESS_COUNTRY}</slot>
+</td>
+</tr>
+<tr><td colspan="20" class="listViewHRS1"></td></tr>
+<!-- END: row -->
+{ASSOCIATED_JAVASCRIPT_DATA}
+</table>
+
+<!-- END: main -->

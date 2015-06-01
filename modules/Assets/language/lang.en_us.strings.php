@@ -1,0 +1,63 @@
+<?php return; /* no output */ ?>
+
+LNK_NEW_ASSETS: Create Supported Product
+LNK_ASSETS_LIST: Supported Products
+LNK_NEW_SUPPORTED_ASSEMBLY: Create Supported Assembly
+LNK_SUPPORTED_ASSEMBLIES_LIST: Supported Assemblies
+LBL_SEARCH_FORM_TITLE: Supported Product Search
+LBL_LIST_FORM_TITLE: Supported Product List
+LBL_PRODUCT_NAME: Supported Product Name
+LBL_PRODUCT: Supported Product
+LBL_SEARCH_SERIAL_NO: Serial No.
+LBL_LIST_PURCHASEPRICE: Purchase
+LBL_LIST_UNIT_SUPPORT_PRICE: Support
+LBL_LIST_SERIAL: "Serial #"
+LBL_LIST_SERIAL_NO: Serial Number
+LBL_LIST_ACCOUNT_NAME: Account
+LBL_LIST_ACCOUNT_ROLE: Role
+LNK_NEW_PRODUCTS: Create Supported Product
+LNK_PRODUCTS_LIST: Supported Products
+LBL_PRODUCT_DATE_AVAIL: Date Purchased
+LBL_PRODUCT_WARRANTY_START_DATE: Warranty Start Date
+LBL_PRODUCT_WARRANTY_EXPIRY_DATE: Warranty Expiry Date
+LBL_PRODUCT_SERIAL_NO: Item Serial Number
+LBL_PRODUCT_ITEM_NAME: Item Name
+LBL_PRODUCT_ITEM_NOTES: Item Notes
+LBL_PRODUCT_PURCHASE_PRICE: Unit Purchase Price
+LBL_PRODUCT_UNIT_SUPPORT_PRICE: Unit Support Price
+LBL_PRODUCT_RAW_PURCHASE_PRICE: Raw Unit Purchase Price
+LBL_PRODUCT_RAW_UNIT_SUPPORT_PRICE: Raw Unit Support Price
+LBL_PRODUCT_PRICING_FORMULA: Unit Purchase Price Formula
+LBL_PRODUCT_SUPPORT_COST: Unit Support Cost
+LBL_PRODUCT_RAW_SUPPORT_COST: Raw Unit Support Cost
+LBL_PRODUCT_QUANTITY: Quantity
+LBL_ACCOUNT_ID: Account ID
+LBL_PRODUCT_ID: ID
+LBL_CURRENCY_ID: Currency ID
+LBL_SUPPORTED_ASSEMBLY_ID: Supported Assembly ID
+LBL_PRODUCT_SUBCON_ID: Svc. Subcontract ID
+LBL_ACCOUNT: Account
+LBL_SUPPORTED_ASSEMBLY: Supported Assembly
+LBL_SUPPORTED_ASSEMBLY_NAME: Supported Assembly Name
+LBL_COMPONENT_OF_ASSEMBLY: Component of Assembly
+LBL_PRODUCT_SUBCON: Svc. Subcontract
+LBL_PRODUCT_ACCOUNT_ROLE: Subcontractor Role
+LBL_ACCOUNT_NAME: Account Name
+LBL_ACCOUNT_ROLE: Account Role
+NTC_REMOVE_ASSET_CONFIRMATION: Are you sure you want to remove this Supported Product from the Account?
+LBL_ASS_ACC_FORM_TITLE: Supported Product-Account
+LBL_LIST_ITEM_NAME: Item
+LBL_LIST_NOTES: Notes
+LBL_QUANTITY_ALERT: Quantity can't be less than 0
+LBL_ADD_SELECTED_BUTTON_TITLE: Add selected
+LBL_ADD_SELECTED_BUTTON_KEY: S
+LBL_ADD_SELECTED_BUTTON_LABEL: Add selected
+LBL_CASES_SUBPANEL_TITLE: Cases
+LBL_SERIAL_NUMBERS: Serial Numbers
+LBL_PROJECT_NAME: Project
+LBL_ADDITIONAL_DETAILS: Supported Product Details
+LBL_SECURITYGROUPS_SUBPANEL_TITLE: Teams
+LBL_PRODUCT_SUPPLIER_NAME: Supplier Name
+LBL_SEARCH_SERIAL_NO: Serial Number
+LBL_SUPPLIER: Supplier
+

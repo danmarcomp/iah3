@@ -1,0 +1,168 @@
+<!-- BEGIN: main -->
+<script type="text/javascript" src="include/javascript/yui/build/yahoo/yahoo-min.js"></script>
+<script type="text/javascript" src="include/javascript/yui/build/event/event-min.js"></script>
+<script type="text/javascript" src="include/javascript/yui/build/connection/connection-min.js"></script>
+
+<script type="text/javascript">
+	YAHOO.util.Event.addListener(window, "load", startProgressIndicator);
+
+	var modulePath = 'index.php?module={MODULE}&action=ImportDB&step=';
+	var asyncProcessUrl = modulePath + 'asyncImport&profile={PROFILE.name}&iter=';
+	var asyncProgressUrl = modulePath + 'asyncProgress';
+
+	var in_progress = true;
+	var was_finished = 0;
+	var start = new Date();
+	var import_steps = {IMPORT_STEPS};
+	var current_step = 0;
+	var import_step = 0;
+
+	var callback1 = {
+		success: function(o) {
+			eval('var data = ' + o.responseText + ';');
+			if (data.error) {
+				YAHOO.util.Connect.asyncRequest('GET', asyncProgressUrl + '&result_message', {
+					success: function(response) {
+						var container = document.createElement('div');
+						container.innerHTML = response.responseText;
+						document.getElementById('history').appendChild(container);
+
+						var anim = new YAHOO.util.Anim('flash_message', { opacity: { to: 0.25 } }, 0.50, YAHOO.util.Easing.easeIn);
+						anim.onComplete.subscribe(function() {
+							var anim2 = new YAHOO.util.Anim('flash_message', { opacity: { to: 1.0 } }, 0.75, YAHOO.util.Easing.easeOut);
+							anim2.animate();
+						});
+						anim.animate();
+					}
+				}, null);
+			}
+
+			in_progress = false;
+			current_step++;
+		}
+	};
+
+	var callback2 = {
+		success: function(o) {
+			eval('var data = ' + o.responseText + ';');
+			var div;
+			if (data.history) {
+				div = document.getElementById('history');
+				for (var i = 0; i < data.history.length; i++) {
+					var img = document.createElement('img');
+					img.src = 'include/images/checkmark.png';
+					var h = data.history[i];
+
+					var item = document.createElement('div');
+					item.appendChild(img);
+					item.appendChild(document.createTextNode(h.name + ' (' + (++import_step) + ')'));
+					if (current_step == import_steps) item.style.marginBottom = '10px';
+
+					div.appendChild(item);
+
+					if (import_step == import_steps) {
+						YAHOO.util.Connect.asyncRequest('GET', asyncProgressUrl + '&result_message', {
+							success: function(response) {
+								var container = document.createElement('div');
+								container.innerHTML = response.responseText;
+								document.getElementById('history').appendChild(container);
+
+								var anim = new YAHOO.util.Anim('flash_message', { opacity: { to: 0.25 } }, 0.50, YAHOO.util.Easing.easeIn);
+								anim.onComplete.subscribe(function() {
+									var anim2 = new YAHOO.util.Anim('flash_message', { opacity: { to: 1.0 } }, 0.75, YAHOO.util.Easing.easeOut);
+									anim2.animate();
+								});
+								anim.animate();
+							}
+						}, null);
+					}
+				}
+			}
+			div = document.getElementById('current');
+			var p1 = document.getElementById('progress1');
+			var p2 = document.getElementById('progress2');
+			var ptext = document.getElementById('progress_text');
+			if (data.current_process) {
+				var progress = parseFloat(data.current_progress);
+				if (isNaN(progress) || progress > 100) progress = 100;
+				ptext.innerHTML = '' + progress.toFixed(1) + '%';
+				progress = Math.floor(progress / 100 * 98);
+				div.innerHTML = data.current_process + '(' + (import_step + 1) + ')';
+				p1.style.width = '' + progress + '%';
+				p2.style.width = '' + (98 - progress) + '%';
+			} else {
+				div.innerHTML = '';
+			}
+			if (was_finished != 2) {
+				var now = new Date();
+				if (now.getTime() - start.getTime() >= 1000) {
+					YAHOO.util.Connect.asyncRequest('GET', asyncProgressUrl, callback2, null);
+				} else {
+					setTimeout('YAHOO.util.Connect.asyncRequest("GET", asyncProgressUrl, callback2, null);', 1000 - now.getTime() + start.getTime());
+				}
+				start = now;
+			}
+			if (was_finished > 1) {
+				startProgressIndicator();
+				was_finished = 0;
+			} else if (was_finished > 0) {
+				was_finished = 2;
+			} else if (data.finished) {
+				was_finished = 1;
+			}
+		}
+	};
+
+	function startProgressIndicator() {
+		if (current_step < import_steps) {
+			in_progress = true;
+			YAHOO.util.Connect.asyncRequest('GET', asyncProcessUrl + current_step, callback1, null);
+			setTimeout('YAHOO.util.Connect.asyncRequest("GET", asyncProgressUrl, callback2, null);', 1000);
+		} else {
+			document.getElementById('meter').style.display = 'none';
+			document.getElementById('continue').style.display = '';
+		}
+	}
+
+</script>
+
+<!-- BEGIN: message -->
+{MESSAGE}
+<!-- END: message -->
+
+<form action="index.php" method="get" name="form" id="form">
+	<input type="hidden" name="module" value="{MODULE}" />
+	<input type="hidden" name="action" value="ImportDB" />
+	<input type="hidden" name="step" value="import" />
+	<input type="hidden" name="profile" value="{PROFILE_NAME}" />
+	<h3>{MOD_STRINGS.MSG_EXECUTE_PREDICTION}</h3>
+
+	<div id="history"></div>
+	<div id="meter">
+		<hr/>
+
+		<div>
+			 <div id="progress_text" style="position:absolute; width:100%; text-align: center; height: 100%; vertical-align: middle; font-weight: bold">
+			 </div>
+			<div id="progress1"
+			     style="float:left;height:20px;background-color:blue; background-image:url(include/images/progress.gif);width:0px; border:solid 1px black; border-right:none">
+			</div>
+			<div id="progress2"
+			     style="float:left;height:20px;background-color:white; width:98%; border:solid 1px black; border-left:none">
+			</div>
+		</div>
+
+		<div id="current"></div>
+	</div>
+
+	<div style="margin-top:10px; display:none" id="continue">
+		<button class="input-button input-outer" type="button" onclick="this.form.module.value='{MODULE}'; this.form.submit();"
+			value="1"><div class="input-icon left module-{MODULE} theme-icon"></div><div class="input-label">{LBL_CONTINUE_SAME}</div></button>
+<!-- BEGIN: next_module -->
+		<button class="input-button input-outer" type="button" onclick="this.form.module.value='{NEXT_MODULE}'; this.form.submit();"
+			value="1"><div class="input-icon left module-{NEXT_MODULE} theme-icon"></div><div class="input-label">{LBL_CONTINUE_NEXT}</div></button>
+<!-- END: next_module -->
+	</div>
+</form>
+
+<!-- END: main -->

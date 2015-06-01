@@ -1,0 +1,89 @@
+<!--
+/*****************************************************************************
+ * The contents of this file are subject to The Long Reach Corporation
+ * Software License Version 1.0 ("License"); You may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * <http://www.thelongreach.com/swlicense.html>
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+ * License for the specific language governing rights and limitations under
+ * the License.
+ *
+ * All copies of the Covered Code must include on each user interface screen:
+ * (i) The Long Reach Corporation copyright notice,
+ * (ii) the "Powered by SugarCRM" logo, and
+ * (iii) the SugarCRM copyright notice
+ * in the same form as they appear in the distribution.
+ * See full license for requirements.
+ *
+ * The Original Code is:
+ *    Info At Hand Add-on Module to SugarCRM Open Source project.
+ * The Initial Developer of this Original Code is The Long Reach Corporation
+ * and it is Copyright (C) 2004-2007 by The Long Reach Corporation;
+ * All Rights Reserved.
+ * Portions created by SugarCRM are Copyright (C) 2004-2005 SugarCRM, Inc.;
+ * All Rights Reserved.
+ *****************************************************************************
+ * $Id$
+ * File Description:
+ * Contributor(s):
+*****************************************************************************/
+-->
+<!-- BEGIN: main -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+
+	<form name="EditView" method="POST" action="index.php">
+	<input type="hidden" name="module" value="Assets">
+	<input type="hidden" name="record" value="{ID}">
+	<input type="hidden" name="return_module" value="{RETURN_MODULE}">
+	<input type="hidden" name="return_action" value="{RETURN_ACTION}">
+	<input type="hidden" name="return_id" value="{RETURN_ID}">
+	<input type="hidden" name="action">
+
+	<td style="padding-bottom: 2px;">
+		<input	title="{APP.LBL_SAVE_BUTTON_TITLE}"
+				accessKey="{APP.LBL_SAVE_BUTTON_KEY}"
+				class="button"
+				onclick="
+					this.form.action.value='SaveAssetAccountRelationship';"
+
+				type="submit"
+				name="button"
+				value="  {APP.LBL_SAVE_BUTTON_LABEL}  " >
+
+		<input
+				title="{APP.LBL_CANCEL_BUTTON_TITLE}"
+				accessKey="{APP.LBL_CANCEL_BUTTON_KEY}"
+				class="button"
+				onclick="
+					this.form.action.value='{RETURN_ACTION}';
+					this.form.module.value='{RETURN_MODULE}';
+					this.form.record.value='{RETURN_ID}'"
+				type="submit"
+				name="button"
+				value="  {APP.LBL_CANCEL_BUTTON_LABEL}  ">
+	</td>
+	<td align="right" nowrap><span class="required">{APP.LBL_REQUIRED_SYMBOL}</span> {APP.NTC_REQUIRED}</td>
+</tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabForm">
+<tr><td>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="15%" class="dataLabel"><slot>{MOD.LBL_PRODUCT_NAME}</slot></td>
+		<td width="35%" class="dataField"><slot>{NAME}</td>
+		<td width="15%" class="dataLabel"><slot>{MOD.LBL_ACCOUNT}</slot></td>
+		<td width="35%" class="dataField"><slot>{ACCOUNT_NAME}<input type=hidden name=account_id value={ACCOUNT_ID}></td>
+	</tr><tr>
+		<td  class="dataLabel"><slot>{MOD.LBL_ACCOUNT_ROLE}</slot></td>
+		<td class="dataField"><slot><select name='account_role'>{ACCOUNT_ROLE_OPTIONS}</select></slot></td>
+		<td class="dataLabel"><slot>&nbsp;</slot></td>
+		<td  class="dataField"><slot>&nbsp;</slot></td>
+	</tr></table>
+</td></tr></table>
+
+	</form>
+{JAVASCRIPT}
+<!-- END: main -->

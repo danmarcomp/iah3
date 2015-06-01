@@ -1,0 +1,64 @@
+<?php return; /* no output */ ?>
+
+LBL_RELATED_USER: User
+LBL_EMPLOYEE_RECORDS_TITLE: Employee Records
+LBL_DOCUMENTS_TITLE: Confidential Documents
+LBL_SEARCH_FORM_TITLE: Employee Search
+LBL_LIST_FORM_TITLE: Employees
+LBL_LIST_SERVICE: Service
+LBL_LIST_EMPLOYEE_NUMBER: "Employee #"
+LBL_EMPLOYEE_NUMBER: Employee Number
+LBL_SEX: Sex
+LBL_PUBLIC_INFORMATION: Public Information
+LBL_HOME_ADDRESS: Home Address
+LBL_START_DATE: Start Date
+LBL_END_DATE: Termination Date
+LBL_DATE_OF_BIRTH: Date of Birth
+LBL_SIN_SSN: SIN/SSN
+LBL_EMERGENCY_CONTACT: Emergency Contact
+LBL_EMERGENCY_PHONE: Emergency Phone
+LBL_EDUCATION: Education
+LBL_LAST_REVIEW: Last Review
+LBL_SALARY: Salary
+LBL_SALARY_CURRENCY: Salary Currency
+LBL_SALARY_CURRENCY_ID: Salary Currency ID
+LBL_SALARY_EXCHANGE_RATE: Salary Exchange Rate
+LBL_BENEFITS_START: Benefits Start
+LBL_BENEFITS_END: Benefits End
+LBL_DEPENDANT_OF: Dependant of
+LBL_DEPENDANTS: Dependants
+LBL_FULL_NAME: Full Name
+LBL_FIRST_NAME: First Name
+LBL_LAST_NAME: Last Name
+LBL_EMPLOYEE_NAME: Employee Name
+LBL_USER_NAME: User Name
+LBL_RELATIONSHIP: Relationship
+LBL_LIST_DEPENDANT_NAME: Dependant Name
+LBL_LIST_DATE_OF_BIRTH: Date of Birth
+LBL_LIST_RELATIONSHIP: Relationship
+LBL_EMPLOYEE_LEAVE: Employee Leave
+LBL_EMPLOYEE_ANNUAL_LEAVE: Employee Annual Leave
+LBL_EMPLOYEE_MONTHLY_LEAVE: Employee Monthly Leave
+LBL_FISCAL_YEAR: Fiscal Year
+LBL_MONTH: Month
+LBL_VACATION_DAYS: Vacation Days
+LBL_SICK_DAYS: Sick Days
+LBL_ACCRUED: Accrued
+LBL_TAKEN: Taken
+LBL_BALANCE: Balance
+LBL_ANNUAL_VACATION_DAYS: Annual Vacation Days
+LBL_ANNUAL_SICK_DAYS: Annual Sick Days
+LBL_VACATION_CARRIED_OVER: Vacation Carried Over
+LBL_NOTES: Notes
+LNK_EMPLOYEE_RECORDS: Employee Records
+LNK_NEW_DOCUMENT: Create HR Document
+LNK_DOCUMENTS: HR Documents
+LBL_RAW_STD_HOURLY_RATE: Raw Standard Hourly Rate
+LBL_STD_HOURLY_RATE: Standard Hourly Rate
+LBL_ADDITIONAL_DETAILS: Employee Details
+LBL_EXPENSE_REPORTS_SUBPANEL_TITLE: Expense Reports
+LBL_SALARY_PERIOD: Salary Period
+LBL_LAST_SALARY_INCREASE: Last Salary Increase Date
+LBL_SERVICE: Service
+LBL_EMPLOYEE_ID: Employee ID
+LBL_STATUS: Status

@@ -1,0 +1,136 @@
+<!--
+/*
+ * The contents of this file are subject to the SugarCRM Public License Version
+ * 1.1.3 ("License"); You may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at http://www.sugarcrm.com/SPL
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.  See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * All copies of the Covered Code must include on each user interface screen:
+ *    (i) the "Powered by SugarCRM" logo and
+ *    (ii) the SugarCRM copyright notice
+ * in the same form as they appear in the distribution.  See full license for
+ * requirements.
+ *
+ * The Original Code is: SugarCRM Open Source
+ * The Initial Developer of the Original Code is SugarCRM, Inc.
+ * Portions created by SugarCRM are Copyright (C) 2004-2006 SugarCRM, Inc.;
+ * All Rights Reserved.
+ * Contributor(s): ______________________________________.
+ */
+-->
+
+<!-- BEGIN: main -->
+<!-- BEGIN: SearchHeader -->
+<script type="text/javascript" src="{JS_PREFIX}modules/Emails/email_popup_helper.js{JS_SUFFIX}"></script>
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tabForm">
+<tr>
+<td>
+<form action="index.php" method="post" name="popup_query_form" id="popup_query_form">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td class="dataLabel" nowrap="nowrap">{MOD.LBL_FIRST_NAME}</td>
+<td class="dataField" nowrap="nowrap"><input type=text size="20" name="first_name" class="dataField" value="{FIRST_NAME}" /></td>
+<td class="dataLabel" nowrap="nowrap">{MOD.LBL_LAST_NAME}</td>
+<td class="dataField" nowrap="nowrap"><input type=text size="20" name="last_name" class="dataField" value="{LAST_NAME}" /></td>
+<td valign="top" align="right">
+<input type="hidden" name="module" value="{MODULE_NAME}" />
+<input type="hidden" name="action" value="Popup" />
+<input type="hidden" name="query" value="true" />
+<input type="hidden" name="func_name" value="" />
+<input type="hidden" name="request_data" value="{request_data}" />
+<input type="hidden" name="populate_parent" value="false" />
+<input type="hidden" name="record_id" value="" />
+<input type="hidden" name="html" value="Email_picker"/>
+<input type="submit" name="button" class="button"
+	title="{APP.LBL_SEARCH_BUTTON_TITLE}"
+	accessKey="{APP.LBL_SEARCH_BUTTON_KEY}"
+	value="{APP.LBL_SEARCH_BUTTON_LABEL}" />
+<input type="hidden" name="mode" value="{MULTI_SELECT}" />
+
+<!--longreach - added-->
+<input type="hidden" name="metadata" value="popupdefsEmail"/>
+
+</td>
+</tr>
+<tr>
+<td class="dataLabel" nowrap="nowrap">{MOD.LBL_ACCOUNT_NAME}</td>
+<td class="dataField"><input type=text size="20" name="account_name" class=dataField  value="{ACCOUNT_NAME}" /></td>
+<!--longreach - replaced blanks-->
+<td class="dataLabel" nowrap="nowrap">{APP.LBL_CATEGORY}</td>
+<td class="dataField"><select name="category">{CATEGORY_OPTIONS}</select></td>
+<td>&nbsp;</td>
+<!--longreach - start added-->
+</tr>
+<tr>
+<td class="dataLabel" nowrap="nowrap">{MOD.LBL_BUSINESS_ROLE}</td>
+<td class="dataField"><select name="business_role">{BUSINESS_ROLE_OPTIONS}</select></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<!--longreach - end added-->
+</table>
+</form>
+</td>
+</tr>
+</table>
+
+<p>
+<div id='addformlink'>{CREATECONTACT}</div>
+<div id='addform' style='display:none;position:relative;z-index:2;left:0px;top:0px;'>
+<form name="ContactSave" onsubmit="return check_form('ContactSave');" method="post" action="index.php">
+{ADDFORMHEADER}
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tabForm">
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td>
+<input type="hidden" name="module" value="{MODULE_NAME}" />
+<input type="hidden" name="action" value="Popup" />
+<input type="hidden" name="doAction" value="save" />
+<input type="hidden" name="query" value="true" />
+<input type="hidden" name="html" value="Email_picker"/>
+{ADDFORM}
+</td></tr>
+</table></td></tr></table>
+</form>
+</div>
+</p>
+
+<!-- END: SearchHeader -->
+
+<!-- BEGIN: list_nav_row -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="listView">
+{PAGINATION}
+<!-- END: list_nav_row -->
+<tr height="20">
+<td scope="col" class="listViewThS1" NOWRAP>{CHECKALL}</td>
+<td scope="col" width="40%" class="listViewThS1" nowrap="nowrap"><a href="{ORDER_BY}last_name{END_ORDER_BY}" class="listViewThLinkS1">{MOD.LBL_LIST_CONTACT_NAME}{arrow_start}{last_name_arrow}{arrow_end}</a></td>
+<td scope="col" width="20%" class="listViewThS1" nowrap="nowrap"><a href="{ORDER_BY}email1{END_ORDER_BY}" class="listViewThLinkS1">{MOD.LBL_LIST_EMAIL_ADDRESS}{arrow_start}{email1_arrow}{arrow_end}</a></td>
+<td scope="col" width="40%" class="listViewThS1" nowrap="nowrap">{MOD.LBL_LIST_ACCOUNT_NAME}</td>
+</tr>
+<!-- BEGIN: row -->
+<tr height="20"
+	onmouseover="setPointer(this, '{CONTACT.ID}', 'over', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');"
+	onmouseout="setPointer(this, '{CONTACT.ID}', 'out', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');"
+	onmousedown="setPointer(this, '{CONTACT.ID}', 'click', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');">
+<td class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}" valign='top'>{PREROW}</td>
+<td scope='row' valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><a href="#" class="listViewTdLinkS1" onclick="send_back_email('Contacts','{CONTACT.ID}'); return false;">{CONTACT.FIRST_NAME}&nbsp;{CONTACT.LAST_NAME}</a></td>
+<td valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">
+
+	<!--longreach - modified - close popup; fixed alternate email link-->
+	<a href="#" class="listViewTdLinkS1" onclick="send_back_email('Contacts','{CONTACT.ID}'); return false;">{CONTACT.EMAIL1}</a><br />
+	<a href="#" class="listViewTdLinkS1" onclick="send_back_email('Contacts','{CONTACT.ID}', true); return false;">{CONTACT.EMAIL2}</a></td>
+
+<td valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{CONTACT.ACCOUNT_NAME}</td>
+</tr>
+<tr><td colspan="20" class="listViewHRS1"></td></tr>
+<!-- END: row -->
+{ASSOCIATED_JAVASCRIPT_DATA}
+</table>
+<!-- END: main -->

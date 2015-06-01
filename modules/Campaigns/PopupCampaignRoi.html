@@ -1,0 +1,57 @@
+<!--
+/*
+ * The contents of this file are subject to the SugarCRM Public License Version
+ * 1.1.3 ("License"); You may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at http://www.sugarcrm.com/SPL
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.  See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * All copies of the Covered Code must include on each user interface screen:
+ *    (i) the "Powered by SugarCRM" logo and
+ *    (ii) the SugarCRM copyright notice
+ * in the same form as they appear in the distribution.  See full license for
+ * requirements.
+ *
+ * The Original Code is: SugarCRM Open Source
+ * The Initial Developer of the Original Code is SugarCRM, Inc.
+ * Portions created by SugarCRM are Copyright (C) 2004-2006 SugarCRM, Inc.;
+ * All Rights Reserved.
+ * Contributor(s): ______________________________________.
+ */
+-->
+
+<!-- BEGIN: main -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tabForm">
+	<tr>
+		<td>
+
+			<form action="index.php" method="post" name="popup_query_form" id="popup_query_form">			
+<TABLE width="70%" border="1"
+          summary="This table gives some statistics about fruit
+                   flies: average height and weight, and percentage
+                   with red eyes (for both males and females).">
+<td>            
+<TABLE WIDTH="30%"
+ <!--<CAPTION>ROI details for the Campaign</CAPTION> -->
+  <TR><TH ALIGN=LEFT>Planned Budget<TD><TH ALIGN=RIGHT>{PLANNED_BUDGET}{CURRENCY}<TD></BR>
+  <TR><TH ALIGN=LEFT>Actual Cost<TD><TH ALIGN=RIGHT>{ACTUAL_COST}{CURRENCY}<TD></BR>
+  <TR><TH ALIGN=LEFT>Expected Revenue<TD><TH ALIGN=RIGHT>{EXPECTED_REVENUE}{CURRENCY}<TD>
+  <TR><TH ALIGN=LEFT>Opportunities Closed<TD><TH ALIGN=RIGHT>{OPP_COUNT}<TD>
+  <TR><TH ALIGN=LEFT>Cost per Impression<TD><TH ALIGN=RIGHT>{COST_OF_IMPRESSION}<TD>  
+  <TR><TH ALIGN=LEFT>Cost per Click Through<TD><TH ALIGN=RIGHT>{COST_PER_CLICK_THROUGH}<TD>  
+</TABLE>
+</td>
+<td>
+<TABLE width="20%"
+  {MY_CHART_ROI}
+</TABLE>       
+</td>
+
+</TABLE>  
+</form>
+		</td>
+	</tr>
+</table>
+<!-- END: main -->

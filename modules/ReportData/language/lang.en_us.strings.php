@@ -1,0 +1,23 @@
+<?php return; /* no output */ ?>
+
+LBL_LIST_FORM_TITLE: Available Reports
+LNK_CREATE_REPORT: Create Report
+LNK_REPORT_LIST: Reports
+LBL_REPORT_NAME: Report Name
+LBL_RUN_NAME: Run Name
+LBL_PRIMARY_MODULE: Primary Module
+LBL_RELATED_SOURCES: Related Sources
+LBL_DESCRIPTION: Description
+LBL_LAST_RUN_TITLE: Last Run
+LBL_LIST_RUN_DATE: Run Date
+LBL_LIST_DESCRIPTION: Description
+LBL_EXPORT_CSV: Comma-delimited (CSV)
+LBL_EXPORT_TSV: Tab-delimited (TSV)
+LBL_EXPORT_SCSV: Semicolon-delimited
+LBL_EXPORT_HTML: HTML
+LBL_EXPORT_XML: XML
+LBL_CONVERT_TARGET_LIST_BUTTON_KEY: T
+LBL_CONVERT_TARGET_LIST_BUTTON_LABEL: Convert to Target List
+LBL_CONVERT_TARGET_LIST_BUTTON_TITLE: Convert to Target List [Alt+T]
+LBL_NAME_NUMBER: Name and Number
+LBL_IS_ARCHIVED: Archived

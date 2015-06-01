@@ -1,0 +1,97 @@
+<!-- BEGIN: main -->
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td align="left" class="listViewPaginationTdS1">
+				<button type="submit" name="op" class="input-button input-outer" value="1"
+				       onclick="if (sListView.get_checks_count() < 1)  {alert('{MOD_STRINGS.MSG_SELECT_AL_LEAST_1}');return false;}"
+				       id="deleterecords_link"><div class="input-icon left icon-delete"></div><span class="input-label">{MOD_STRINGS.LBL_DELETE}</span></button>&nbsp;&nbsp;{MOD_STRINGS.LBL_SELECTED}:
+				<input type="text" value="0" name="selectCount[]" readonly=""
+				       style="border: 0px none; background: none repeat scroll 0% 0% transparent; font-size: inherit; color: inherit;"
+				       class="listViewPaginationTdS1">&nbsp;
+			</td>
+			<td align="right" nowrap="nowrap" class="listViewPaginationTdS1">
+				<!-- BEGIN: start -->
+				<button style="width: 3em;" class="button" title="{MOD_STRINGS.LBL_START}"
+				        type="submit" name="op" value="Start">
+					<span style="display:none;">{MOD_STRINGS.LBL_START}</span>
+
+					<div style="background-position: -3088px 0pt; width: 13px; height: 12px; line-height: 12px;"
+					     class="icon-box"><img border="0" width="13" height="12" src="include/images/blank.gif"></div>
+				</button>
+				<!-- END: start -->
+				<!-- BEGIN: disabled_start -->
+				<button style="width: 3em;" class="button" title="{MOD_STRINGS.LBL_START}" disabled="disabled"
+				        type="submit" name="op" value="Start">
+					<span style="display:none;">{MOD_STRINGS.LBL_START}</span>
+
+					<div style="background-position: -3104px 0pt; width: 13px; height: 12px; line-height: 12px;"
+					     class="icon-box"><img border="0" width="13" height="12"
+					                           src="include/images/blank.gif"></div>
+				</button>
+				<!-- END: disabled_start -->
+				<!-- BEGIN: prev -->
+				<button style="width: 3em;" class="button" title="{MOD_STRINGS.LBL_PREVIOUS}"
+				        type="submit" name="op" value="Previous">
+					<span style="display:none;">{MOD_STRINGS.LBL_PREVIOUS}</span>
+
+					<div style="background-position: -2912px 0pt; width: 8px; height: 12px; line-height: 12px;"
+					     class="icon-box"><img border="0" width="8" height="12" src="include/images/blank.gif"></div>
+				</button>
+				<!-- END: prev -->
+				<!-- BEGIN: disabled_prev -->
+				<button style="width: 3em;" class="button" title="{MOD_STRINGS.LBL_PREVIOUS}" disabled="disabled"
+				        type="submit" name="op" value="Previous">
+					<span style="display:none;">{MOD_STRINGS.LBL_PREVIOUS}</span>
+
+					<div style="background-position: -2928px 0pt; width: 8px; height: 12px; line-height: 12px;"
+					     class="icon-box"><img border="0" width="8" height="12"
+					                           src="include/images/blank.gif"></div>
+				</button>
+				<!-- END: disabled_prev -->
+
+				<span class="pageNumbers">({P.index_start} - {P.index_end} of {P.total})</span>
+
+				<!-- BEGIN: next -->
+				<button style="width: 3em;" class="button" title="{MOD_STRINGS.LBL_NEXT}"
+				        type="submit" name="op" value="Next">
+					<span style="display:none;">{MOD_STRINGS.LBL_NEXT}</span>
+
+					<div style="background-position: -2800px 0pt; width: 8px; height: 12px; line-height: 12px;"
+					     class="icon-box"><img border="0" width="8" height="12"
+					                           src="include/images/blank.gif"></div>
+				</button>
+				<!-- END: next -->
+				<!-- BEGIN: disabled_next -->
+				<button style="width: 3em;" class="button" title="{MOD_STRINGS.LBL_NEXT}" disabled="disabled" type="submit" name="op"
+				        value="Next">
+					<span style="display:none;">{MOD_STRINGS.LBL_NEXT}</span>
+
+					<div style="background-position: -2816px 0pt; width: 8px; height: 12px; line-height: 12px;"
+					     class="icon-box"><img border="0" width="8" height="12" src="include/images/blank.gif"></div>
+				</button>
+				<!-- END: disabled_next -->
+				<!-- BEGIN: end -->
+				<button style="width: 3em;" class="button" title="{MOD_STRINGS.LBL_END}"
+				        type="submit" name="op" value="End">
+					<span style="display:none;">{MOD_STRINGS.LBL_END}</span>
+
+					<div style="background-position: -2528px 0pt; width: 13px; height: 12px; line-height: 12px;"
+					     class="icon-box"><img border="0" width="13" height="12"
+					                           src="include/images/blank.gif"></div>
+				</button>
+				<!-- END: end -->
+				<!-- BEGIN: disabled_end -->
+				<button style="width: 3em;" class="button" title="{MOD_STRINGS.LBL_END}" disabled="disabled" type="submit" name="op"
+				        value="End">
+					<span style="display:none;">{MOD_STRINGS.LBL_END}</span>
+
+					<div style="background-position: -2544px 0pt; width: 13px; height: 12px; line-height: 12px;"
+					     class="icon-box"><img border="0" width="13" height="12" src="include/images/blank.gif"></div>
+				</button>
+				<!-- END: disabled_end -->
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!-- END: main -->

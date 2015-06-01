@@ -1,0 +1,130 @@
+<?php return; /* no output */ ?>
+
+LBL_SEARCH_FORM_TITLE: Contract Search
+LBL_LIST_FORM_TITLE: Contract List
+LBL_CONTRACT_NAME: "Contract #"
+LBL_CONTRACT: Contract
+LBL_NAME: Contract Name
+LBL_INVITEE: Contacts
+LNK_CONTRACTS_LIST: Contracts
+LNK_NEW_CONTRACTS: Create Contract
+LNK_CONTRACT_TYPES_LIST: Svc. Contract Types
+LNK_NEW_CONTRACT_TYPE: Create Contract Type
+LBL_CT_SEARCH_FORM_TITLE: Contract Type Search
+LBL_CT_LIST_FORM_TITLE: Contract Type List
+LBL_CONTRACTS_NAME: Contract Number
+LBL_LIST_CONTRACT_NAME: Contract
+LBL_LIST_ACCOUNT_NAME: Account
+LBL_LIST_DATE_ENTERED: Date Entered
+LBL_LIST_DESCRIPTION: Description
+LBL_LIST_TYPE_NAME: Contract Type
+LBL_LIST_TYPE_RESP: Response Time
+LBL_LIST_TYPE_DESC: Description
+LBL_ACCOUNT_NAME: Account
+LBL_CONTRACT_NAME_NOTE: (determined by system)
+LBL_ACCOUNT_PHONE: "Account Phone #"
+LBL_DATE_ENTERED: Date Entered
+LBL_LIST_DATE_MODIFIED: Date Modified
+LBL_DATE_MODIFIED: Date Modified
+LBL_DESCRIPTION: Description
+LBL_LIST_SUBC_CONTRACT_TYPE_NAME: Contract Type
+LBL_LIST_SUBC_DATE_START: Starts
+LBL_LIST_SUBC_DATE_EXPIRE: Expires
+LBL_LIST_SUBC_DATE_BILLED: Billed
+LBL_LIST_SUBC_VENDOR_CONTRACT_NAME: Vendor Contract
+LBL_LIST_SUBC_EMPLOYEE_CONTACT_NAME: User
+LBL_LIST_SUBC_CUST_CONTACT_NAME: Contact
+LBL_SUBC_MAIN_CONTRACT_NAME: Parent Contract
+LBL_SUBC_VENDOR_CONTRACT: Vendor Contract
+LBL_SUBC_DATE_START: Start Date
+LBL_SUBC_DATE_EXPIRE: Expiry Date
+LBL_SUBC_DATE_BILLED: Billing Date
+LBL_SUBC_VENDOR_CONTRACT_NAME: Vendor Contract
+LBL_SUBC_EMPLOYEE_CONTACT_NAME: User
+LBL_SUBC_CUST_CONTACT_NAME: Contact
+LBL_SUBC_MAIN_CONTRACT: Main Contract
+LBL_SUBC_CONTRACT_TYPE: Contract Type
+LBL_SUBC_SEARCH_FORM_TITLE: Subcontract Search
+LBL_SUBC_LIST_FORM_TITLE: Service Subcontracts
+LBL_ASSETS_LIST_FORM_TITLE: Supported Products
+LBL_CASES_LIST_FORM_TITLE: Cases
+LBL_MODULE_CT_TITLE: Service Contract Types
+LBL_LIST_NAME: Name
+LBL_LIST_QUANTITY: Qty.
+LBL_LIST_PRODUCT_TYPE: Type
+LBL_LIST_PRODUCT_CATEGORY: Category
+LBL_LIST_AVAILABLE: Available
+LBL_LIST_COST: Cost
+LBL_LIST_LISTPRICE: List Price
+LBL_LIST_PURCHASEPRICE: Purchase Price
+LBL_LIST_SUBC_NAME: Name
+LBL_LIST_ACCOUNT_PHONE: Account Phone
+JS_ERROR_BAD_A2I_STRING:
+	An invalid string was passed to the alpha2int function.  Please contact the maintainer of the codebase.
+LBL_TYPE_NAME: Type
+LBL_TYPE_RESPONSE_TIME: Response Time
+LBL_TYPE_VENDOR_NAME: Supplier
+LBL_TYPE_DATE_ENTERED: Date Entered
+LBL_TYPE_DATE_MODIFIED: Date Modified
+LBL_TYPE_NHOUSE_PRODUCT: Product
+LBL_TYPE_DESCRIPTION: Description
+LBL_TYPE_CONTRACT_NO: "-"
+LBL_CT_NAME: Type
+LBL_CT_RES_TIME: Response Time
+LBL_CT_VENDOR_NAME: Supplier
+LBL_CT_DATE_ENTERED: Date Entered
+LBL_CT_DATE_MODIFIED: Date Modified
+LBL_PRODUCT: Product
+LBL_IS_ACTIVE: Status
+LBL_SUBC_TOTAL_COST: Total Price
+LBL_SUBC_TOTAL_LIST: Total List Value
+LBL_SUBC_TOTAL_PURCHASE: Total Purchase Price
+LBL_SUBC_TOTAL_SUPPORT_COST: Total Support Price
+LBL_SUBC_LIST_TOTAL_PURCHASE: Total Purchase
+LBL_SUBC_LIST_TOTAL_SUPPORT_COST: Total Support
+LBL_SUBC_TOTAL_BOOK: Total Book Value
+LBL_SUBC_IS_ACTIVE: Status
+LBL_SUBC_NAME: Name
+LBL_SUBCONTRACT_NAME: Subcontract
+NTC_REMOVE_ASSET_CONFIRMATION: Are you sure you want to remove this company asset from this subcontract?
+ERR_CONTRACT_TYPE:
+	Warning: There are presently no Contract Types defined.  Please create some before creating any Contracts.
+LBL_SET_WARRANTY_DATES_BUTTON_TITLE: Set Warranty Dates [Alt + W]
+LBL_SET_WARRANTY_DATES_BUTTON_KEY: W
+SET_WARRANTY_DATES_CONFIRMATION:
+	Set the warranty start and expiry dates of  the supported products to match the start and expiry dates of this contract?
+SET_WARRANTY_DATES_BUTTON_LABEL: Set Warranty Dates
+LBL_PRINT_BUTTON_TITLE: Print as PDF [Alt + P]
+LBL_PRINT_BUTTON_KEY: P
+LBL_PRINT_BUTTON_LABEL: Print as PDF
+LBL_SELECT_PRODUCT_BUTTON_TITLE: Select Product [Alt+P]
+LBL_SELECT_PRODUCT_BUTTON_KEY: P
+LBL_SELECT_PRODUCT_BUTTON_LABEL: Select Product
+LBL_SELECT_ASSEMBLY_BUTTON_TITLE: Select Assembly [Alt+A]
+LBL_SELECT_ASSEMBLY_BUTTON_KEY: A
+LBL_SELECT_ASSEMBLY_BUTTON_LABEL: Select Assembly
+LBL_ASSET_LIST_TITLE: Asset List
+LBL_PDF_SUBC_MAIN_CONTRACT: Main Contract
+LBL_PDF_SUBC_NAME: Subcontract
+LBL_PDF_SUBC_START_DATE: Start Date
+LBL_PDF_SUBC_EXPIRY_DATE: Expires
+LBL_PDF_ACCOUNT: Account
+LBL_PDF_CONTACT: Contact
+LBL_PDF_PRODUCTS: Products
+LBL_PDF_ASSEMBLIES: Assemblies
+LBL_PDF_ALL_ASSETS: All Assets
+LBL_PDF_HIDE_COMPONENTS: Hide Components
+LBL_PDF_NOTES: Notes
+LBL_PDF_LIST_NUMBER: "#"
+LBL_PDF_LIST_QTY: Qty.
+LBL_PDF_LIST_PRODUCT: Product
+LBL_PDF_LIST_SERIAL: Serial Numbers
+LBL_SUBCONTRACTS: Subcontracts
+LBL_MAIN_CONTRACT_ID: Service Contract ID
+LBL_EXPIRING_SUBCONTRACTS: "The following service subcontracts will expire in "
+LBL_EXPIRED_SUBCONTRACTS: The following service subcontracts have expired
+LBL_DAYS: " days"
+LBL_EXPIRING_SUBCONTRACTS_LIST: Subcontracts
+LBL_ASSETS: Supported Products
+LBL_SUPPORTED_ASSEMBLIES: Supported Assemblies
+LBL_SECURITYGROUPS_SUBPANEL_TITLE: Teams

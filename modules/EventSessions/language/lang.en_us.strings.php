@@ -1,0 +1,22 @@
+<?php return; /* no output */ ?>
+
+LBL_LIST_SESSION_NUMBER: "Session #"
+LBL_EVENT_ID: Event ID
+LBL_EVENT_NAME: Event Name
+LBL_EVENT_TYPE: Event Type
+LBL_LIST_NAME: Session Name
+LBL_LIST_EVENT_NAME: Event Name
+LBL_LIST_FORMAT: Format
+LBL_LIST_EVENT_TYPE: Type
+LBL_START_DATE: Start Date
+LBL_START_TIME: Start Time
+LBL_END_DATE: End Date
+LBL_END_TIME: End Time
+LBL_INVOICES: Invoices
+LBL_INVOICES_SUBPANEL_TITLE: Invoices
+LBL_ADDITIONAL_DETAILS: Event Session Details
+LBL_SESSION_NAME: Session Name
+LBL_EVENT: Event
+LBL_LIST_REGISTRANT_COUNT: Registrants
+LBL_NUM_SESSIONS: Number of sessions
+LBL_ATTENDEES: Event Registration

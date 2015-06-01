@@ -1,0 +1,158 @@
+<?php return; /* no output */ ?>
+
+LNK_NEW_CALL: Schedule Call
+LNK_NEW_MEETING: Schedule Meeting
+LNK_NEW_APPOINTMENT: Create Appointment
+LNK_NEW_TASK: Create Task
+LNK_CALL_LIST: Calls
+LNK_MEETING_LIST: Meetings
+LNK_TASK_LIST: Tasks
+LBL_SCHEDULED: Scheduled
+LBL_BUSY: Busy
+LBL_CONFLICT: Conflict
+LBL_USER_CALENDARS: User Calendars
+LBL_SHARED: Company Week
+LBL_PREVIOUS_SHARED: Previous
+LBL_NEXT_SHARED: Next
+LBL_SHARED_CAL_TITLE: Shared Calendar
+LBL_USERS: Users
+LBL_REFRESH: Refresh
+LBL_EDIT: Edit
+LBL_SELECT_USERS: Select users for calendar display
+LBL_FILTER_BY_TEAM: Filter user list by team
+LBL_EMPTY_MEETING_TITLE: (No Title)
+LNK_NOTE_LIST: Notes
+LBL_RDAY: Resource Day
+LBL_RWEEK: Resource Week
+LBL_SDAY: Company Day
+LBL_RES_CALENDARS: Resource Calendars
+LBL_LOCATION: Location
+LBL_RESOURCE_NAME: Name
+LBL_RESOURCE_TYPE: Type
+LBL_TASK_DUE: Due
+LBL_MY_CALENDAR_TITLE: My Calendar
+LBL_RESOURCE_CALENDAR_TITLE: Resource Calendar
+LBL_COMPANY_CALENDAR_TITLE: Company Calendar
+LBL_EVENTS_CALENDAR_TITLE: Events Calendar
+LBL_PREVIOUS_SDAY: Previous Day
+LBL_PREVIOUS_RDAY: Previous Day
+LBL_PREVIOUS_RWEEK: Previous Week
+LBL_NEXT_SDAY: Next Day
+LBL_NEXT_RDAY: Next Day
+LBL_NEXT_RWEEK: Next Week
+LBL_DEPARTMENT: Department
+LBL_DATE: Date
+LBL_LIST_LOCATION: Location
+LBL_LIST_RESOURCE_NAME: Name
+LBL_LIST_RESOURCE_TYPE: Type
+LBL_SHARED_BY_MONTH: Company Calendar
+LBL_PREVIOUS_SHARED_BY_MONTH: Previous Month
+LBL_NEXT_SHARED_BY_MONTH: Next Month
+LBL_SHOW_APPOINTMENTS: Show Appointments and Tasks
+LBL_SHOW_MEETING_RESOURCES: Show Meeting Resources
+LBL_SHOW_PROJECT_RESOURCES: Show Project Resources
+LBL_STARTS_AT: Starts at %s
+LBL_ENDS_AT: Ends at %s
+LBL_MONTH: Month
+LBL_YEAR: Year
+LBL_DAY: Day
+LBL_WEEK: Week
+LBL_RESOURCE_DAY: Day Grid
+LBL_RESOURCE_WEEK: Week Grid
+LBL_PDF_BUTTON_LABEL: Print as PDF
+LBL_PDF_BUTTON_TITLE: Print as PDF [Alt+P]
+LBL_PDF_BUTTON_KEY: P
+LBL_PDF_MEETINGS: Meetings
+LBL_PDF_CALLS: Calls
+LBL_PDF_LIST_TIME: Time
+LBL_PDF_LIST_EVENTS: Events
+LBL_PDF_LIST_TASK: Task
+LBL_PDF_LIST_PRIORITY: Priority
+LBL_PDF_LIST_DUE_DATE: Due Date
+LBL_PDF_EVENT_WITH: " - with "
+LBL_SESSION_NUMBER: " session #%s "
+LBL_EVENTS: Events Calendar
+LBL_EVENT_TYPE: Event Type
+LBL_LIST_MY_CALENDAR_TITLE: My Calendar
+LBL_YEAR_SEPARATOR: "-"
+LBL_MONTH_SEPARATOR: "-"
+LBL_DAY_SEPARATOR: ""
+LBL_TEAM_DAY: Day (Team)
+LBL_TEAM_WEEKLY: Week (Team)
+LBL_MODIFIED_HELP:
+	Click (and drag) to create Call/Mtg. &nbsp;Double-click Call/Mtg. name or time to edit. &nbsp;Click any icon for details.
+LBL_MODIFIED_TIMEBAR_HELP:
+	Click to create a Mtg.&nbsp;Double-click Mtg. name to edit. &nbsp;Click any icon for details.
+LBL_APPLY_DATETIME_FROM_TIMEBAR_HELP: Click timebar to change time slice
+LBL_APPLY_BUTTON_LABLE: Apply
+FORMAT_WEEK_NUMBER: %d
+LBL_DECO_MONTH: ""
+LBL_TARGET_MEETING_TIME: Scheduling
+LBL_TASK: Task
+LBL_TASK_COUNT: Records
+LBL_DISPLAY_TASK_LIST: Display Task List.
+LBL_CLOSE_TASK_LIST: Close
+LBL_TARGET_RESOURCE: Resource
+LBL_TARGET_USER: User
+LBL_RESOURCE_ALL: "[All Resources]"
+LBL_PROJECT: Project
+LBL_PROJECT_ALL: All Projects
+LBL_ALL_USERS: "[All Users]"
+LBL_MULTIPLE_USERS: "[Multiple Users]"
+LBL_MULTIPLE_PROJECTS: "[All Projects]"
+LBL_SHOW_MEETINGS: Meetings
+LBL_SHOW_CALLS: Calls
+LBL_SHOW_TASKS: Tasks
+LBL_SHOW_EVENTS: Marketing Events
+LBL_SHOW_PTASKS: Project Tasks
+LBL_SHOW_LEAVE: Vacations
+LBL_FORMAT_WEEKRANGE_OVER_YEAR: %b %d, %Y
+LBL_FORMAT_WEEKRANGE_OVER_MONTH1: %b %d
+LBL_FORMAT_WEEKRANGE_OVER_MONTH2: %b %d, %Y
+LBL_FORMAT_WEEKRANGE1: %b %d
+LBL_FORMAT_WEEKRANGE2: %d, %Y
+LBL_FORMAT_DATE: %b %d, %Y
+LBL_FORMAT_MONTH: %B %Y
+LBL_ACTIVITY_COUNT_TASKS: %d task(s)
+LBL_ACTIVITY_COUNT_PROJECTTASK: %d project task(s)
+LBL_ACTIVITY_COUNT_BOOKING: %d booked hours
+LBL_ACTIVITY_COUNT_MEETINGS: %d meeting(s)
+LBL_ACTIVITY_COUNT_CALLS: %d call(s)
+LBL_ACTIVITY_COUNT_EVENTSESSIONS: %d event(s)
+LBL_ACTIVITY_COUNT_VACATIONS: %d vacation(s)
+LBL_ACTIVITY_COUNT_HOLIDAYS: %d holiday(s)
+LBL_PDF_ALLDAY_EVENTS: All-Day Events
+LBL_ALL_DAY_COL_HEADER: all-day
+LBL_PRIVATE_MEETINGS: Private Meeting
+LBL_PRIVATE_CALLS: Private Call
+LBL_PRIVATE_TASKS: Private Task
+LBL_VACATION_DAYS: %s day(s)
+LNK_LEAVE_LIST: Vacations &amp; Sick Days
+LNK_LEAVE_VACATION: Schedule Vacation
+LNK_LEAVE_SICK: Record Sick Days
+LBL_SECTION_USERS: Users
+LBL_SECTION_RESOURCES: Resources
+LBL_MODE: Mode
+LBL_ME: Me
+LBL_MODE_ACTIVITIES: Activities
+LBL_MODE_RESOURCES: Resources
+LBL_MODE_PROJECTS: Projects
+LBL_MODE_TIMESHEETS: Timesheets
+LBL_MORE: More
+LBL_ADD_BUTTON_LABEL: Add
+LBL_ALL_USERS_BUTTON_LABEL: All Users
+LBL_ALL_RESOURCES_BUTTON_LABEL: All Resources
+LBL_ALL_PROJECTS_BUTTON_LABEL: All Projects
+LBL_CURRENT_USER_BUTTON_LABEL: Current User
+LNK_CREATE_TIMESHEET: Create Timesheet
+LBL_SUBMIT_BUTTON_LABEL: Submit
+LBL_APPROVE_BUTTON_LABEL: Approve
+MSG_APPROVE_CONFIRM: Do you want to approve all Booked Hours for this Timesheet?
+LBL_REJECT_BUTTON_LABEL: Reject
+MSG_REJECT_CONFIRM: Do you want to reject all Booked Hours for this Timesheet?
+MSG_SUBMIT_CONFIRM: Do you want to submit this Timesheet?
+LBL_ADD_USER: Add User
+LBL_ADD_RESOURCE: Add Resource
+LBL_SELECT_RESOURCE: Select Resource...
+LBL_SELECT_PROJECT: Select Project...
+LBL_SHOW_ON_CALENDAR: Show on Calendar

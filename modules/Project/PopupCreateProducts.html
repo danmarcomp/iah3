@@ -1,0 +1,158 @@
+<!--
+/*****************************************************************************
+ * The contents of this file are subject to The Long Reach Corporation
+ * Software License Version 1.0 ("License"); You may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * <http://www.thelongreach.com/swlicense.html>
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+ * License for the specific language governing rights and limitations under
+ * the License.
+ *
+ * All copies of the Covered Code must include on each user interface screen:
+ * (i) The Long Reach Corporation copyright notice,
+ * (ii) the "Powered by SugarCRM" logo, and
+ * (iii) the SugarCRM copyright notice
+ * in the same form as they appear in the distribution.
+ * See full license for requirements.
+ *
+ * The Original Code is:
+ *    Info At Hand Add-on Module to SugarCRM Open Source project.
+ * The Initial Developer of this Original Code is The Long Reach Corporation
+ * and it is Copyright (C) 2004-2007 by The Long Reach Corporation;
+ * All Rights Reserved.
+ * Portions created by SugarCRM are Copyright (C) 2004-2005 SugarCRM, Inc.;
+ * All Rights Reserved.
+ *****************************************************************************
+ * $Id: PopupCreateProducts.html 7243 2010-05-10 04:49:11Z andrey $
+ * File Description:
+ * Contributor(s):
+*****************************************************************************/
+-->
+<!-- BEGIN: main -->
+<form method="post" action="index.php" name="ConvertForm">
+<input type="hidden" name="module" value="Project" >
+<input type="hidden" name="to_pdf" value="true" >
+<input type="hidden" name="action" value="CreateProducts" >
+<input type="hidden" name="record" value="{ID}" >
+<input type="hidden" name="currency_id" value="{CURRENCY_ID}" >
+<input type="hidden" name="exchange_rate" value="{EXCHANGE_RATE}" >
+<input type="hidden" name="account_id" value="{ACCOUNT_ID}" >
+<input type="hidden" name="account_name" value="{ACCOUNT_NAME}" >
+
+{TITLE1}
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="listView">
+<tr height="20">
+<td scope="col" width="1%" class="listViewThS1">&nbsp;</td>
+<td scope="col" width="40%" class="listViewThS1" colspan="3">{MOD.LBL_CONVERT_LIST_NAME}</td>
+</tr>
+<!-- BEGIN: row -->
+<tr height="20">
+	<td class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}" valign='top' align="center" width="1%">
+		<input type="checkbox" class="checkbox" value="1" checked="checked" name="selected[{item.num}]">
+		<input type="hidden" value="{item.name}" name="name[{item.num}]">
+		<input type="hidden" value="{item.id}" name="id[{item.num}]">
+		<input type="hidden" value="{item.is_assembly}" name="is_assembly[{item.num}]">
+		<input type="hidden" value="{item.is_taxable}" name="is_taxable[{item.num}]">
+	</td>
+<td width="1%" valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{item.icon}</td>
+<td colspan="2" valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{item.name}</td>
+</tr>
+<tr><td colspan="20" class="listViewHRS1"></td></tr>
+<!-- END: row -->
+<!-- BEGIN: part -->
+<tr height="20">
+	<td colspan="2" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}" valign='top' align="center">
+		&nbsp;
+	</td>
+<td width="1%" valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{PRODUCT_ICON}</td>
+<td valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{part.name}</td>
+</tr>
+<tr><td colspan="20" class="listViewHRS1"></td></tr>
+<!-- END: part -->
+</table>
+
+{TITLE2}
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tabForm">
+	<tr>
+		<td>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr height="20">
+					<td valign="top">
+<select name="create_contract" onchange="contract_option_changed(this.value)" id="create_contract" >
+	<!-- BEGIN: create_contract -->
+	<option value="create">{MOD.LBL_CREATE_CONTRACT}</option>
+	<!-- END: create_contract -->
+	<!-- BEGIN: select_contract -->
+	<option value="select">{MOD.LBL_SELECT_CONTRACT}</option>
+	<!-- END: select_contract -->
+</select>
+					&nbsp;</td>
+					<td id="contract_type_label" valign="top">
+						{MOD.LBL_CONTRACT_TYPE}
+					</td>
+					<td id="contract_type" valign="top">
+						<select name="contract_type">
+							{CONTRACT_TYPE_OPTIONS}
+						</select>
+					</td>
+					<td id="contract_name_label" valign="top">
+						{MOD.LBL_CONTRACT_NAME}
+					</td>
+					<td id="contract_name" valign="top">
+						<input type="text" name="new_contract_name" size="25">
+					</td>
+					<td id="contract_selector" style="display:none" colspan="3" valign="top">
+						<input name='subcontract_name' id="subcontract_name" type="text" tabindex='2' size='30' maxlength='36' value="" readonly="readonly">
+						<input name='service_subcontract_id' type="hidden" value="" id="service_subcontract_id">
+						<input title="{APP.LBL_SELECT_BUTTON_TITLE}" accessKey="{APP.LBL_SELECT_BUTTON_KEY}" type="button"
+						class="button" value='{APP.LBL_SELECT_BUTTON_LABEL}' onclick='open_popup("SubContracts&account_name={ACCOUNT_NAME}&query=true", 600, 400, "", true, false, {subcontract_popup_request_data});'>
+					</td>
+				</tr>
+		</table>
+</td></tr></table>
+<p>
+<br>
+<input type="submit" value="{MOD.LBL_PROCEED}" class="button" onclick="return check_form('ConvertForm');" >
+<input type="button" value="{APP.LBL_CANCEL_BUTTON_LABEL}" class="button" onclick="window.close()" >
+</p>
+
+</form>
+{JAVASCRIPT}
+<script type="text/javascript">
+	function contract_option_changed(value)	{
+		if (validate['ConvertForm']) {
+			removeFromValidate('ConvertForm', 'contract_type');
+			removeFromValidate('ConvertForm', 'new_contract_name');
+			removeFromValidate('ConvertForm', 'subcontract_name');
+		}
+		if (value == 'create') {
+			hide_show(['contract_selector'], false);
+			hide_show(['contract_type', 'contract_type_label', 'contract_name', 'contract_name_label'],true);
+			addToValidate('ConvertForm', 'contract_type', 'varchar', 1, '{MOD.LBL_CONTRACT_TYPE}' );
+			addToValidate('ConvertForm', 'new_contract_name', 'varchar', 1, '{MOD.LBL_CONTRACT_NAME}' );
+		} else if (value == 'select') {
+			hide_show(['contract_selector'], true);
+			hide_show(['contract_type', 'contract_type_label', 'contract_name', 'contract_name_label'], false);
+			addToValidate('ConvertForm', 'subcontract_name', 'varchar', 1, '{MOD.LBL_CONTRACT_NAME}' );
+		} else {
+			hide_show(['contract_selector', 'contract_type', 'contract_type_label', 'contract_name', 'contract_name_label'], false);
+		}
+	}
+	function hide_show(els, show)
+	{
+		for (var i in els) {
+			document.getElementById(els[i]).style.display = show ? '' : 'none';
+		}
+	}
+	contract_option_changed(document.getElementById('create_contract').value);
+</script>
+<!-- END: main -->
+
+<!-- BEGIN: no_products -->
+{MOD.LBL_NO_PRODUCTS_TO_CONVERT}
+<p>
+<input type="button" value="{APP.LBL_CANCEL_BUTTON_LABEL}" class="button" onclick="window.close()" >
+</p>
+<!-- END: no_products -->
+

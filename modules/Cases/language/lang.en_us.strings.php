@@ -1,0 +1,143 @@
+<?php return; /* no output */ ?>
+
+ERR_DELETE_RECORD: A record number must be specified to delete the account.
+LBL_ACCOUNT_ID: Account ID
+LBL_ACCOUNT_NAME: Account Name
+LBL_ACTIVITIES_SUBPANEL_TITLE: Activities
+LBL_BUGS_SUBPANEL_TITLE: Bugs
+LBL_CASE_NUMBER: Case Number
+LBL_CASE_SUBJECT: Case Subject
+LBL_CASE: Case
+LBL_CONTACT_CASE_TITLE: Contact-Case
+LBL_CONTACT_NAME: Contact Name
+LBL_CONTACT_ROLE: Role
+LBL_CONTACTS_SUBPANEL_TITLE: Contacts
+LBL_DEFAULT_SUBPANEL_TITLE: Cases
+LBL_DESCRIPTION: Description
+LBL_HISTORY_SUBPANEL_TITLE: History
+LBL_INVITEE: Contacts
+LBL_NEW_FORM_TITLE: New Case
+LBL_NUMBER: Number
+LBL_PRIORITY: Priority
+LBL_RESOLUTION: Resolution
+LBL_SEARCH_FORM_TITLE: Case Search
+LBL_STATUS: Status
+LBL_SUBJECT: Subject
+LBL_SYSTEM_ID: System ID
+LBL_LIST_ACCOUNT_NAME: Account Name
+LBL_LIST_ASSIGNED: Assigned To
+LBL_LIST_CLOSE: Close
+LBL_LIST_FORM_TITLE: Case List
+LBL_LIST_LAST_MODIFIED: Last Modified
+LBL_LIST_MY_CASES: My Open Cases
+LBL_LIST_NUMBER: "Case #"
+LBL_LIST_PRIORITY: Priority
+LBL_LIST_STATUS: Status
+LBL_LIST_SUBJECT: Subject
+LNK_CASE_LIST: Cases
+LNK_NEW_CASE: Create Case
+NTC_REMOVE_FROM_BUG_CONFIRMATION: Are you sure you want to remove this case from this bug?
+NTC_REMOVE_INVITEE: Are you sure you want to remove this contact from the case?
+LBL_LIST_ASSIGNED_TO_NAME: Assigned User
+LBL_LIST_DATE_CREATED: Date Created
+LBL_SECURITYGROUPS_SUBPANEL_TITLE: Teams
+LBL_PRODUCTS_SUBPANEL_TITLE: Service Parts
+LBL_ACTIVE: All Active
+LBL_LIST_AGE: Age
+LBL_LIST_ASSIGNED_USER: User
+LBL_TOP_ACTIVE_CASES: My Top Active Cases
+LBL_CONTRACT_ID: Svc. Subcontract ID
+LBL_CONTRACT_NAME: Svc. Subcontract
+LBL_CUST_CONTACT_ID: Contact ID
+LBL_CUST_CONTACT_NAME: Contact Name
+LBL_ASSET_ID: Asset ID
+LBL_ASSET_NAME: Asset Name
+LBL_CONTACT_PHONE: Contact Phone
+LBL_ARRIVAL_TIME: Arrival Time
+LBL_CUSTOMER_REQ_NO: "Customer Req. #"
+LBL_VENDOR_RMA_NO: "Vendor RMA #"
+LBL_DATE_CLOSED: Date Closed
+LBL_VENDOR_SVCREQ_NO: "Vendor Svc. Req. #"
+LBL_DATE_BILLED: Date Billed
+LBL_TIME_USED: Time Used
+LBL_TIME_USED_UNIT: Time Used Unit
+LBL_ASSET_SERIAL: Asset Serial No.
+LBL_ASSET: Asset
+LBL_SUBCONTRACT: Subcontract
+LBL_CUST_CONTACT: Primary Contact
+LBL_TRAVEL_TIME: Travel Time
+LBL_TRAVEL_TIME_UNIT: Travel Time Unit
+LBL_ACTIVITY_TIME: Total Activity Time
+LBL_FULLTEXT: Fulltext Search
+LBL_CATEGORY: Category
+LBL_SOURCE: Source
+LBL_TYPE: Type
+LBL_SEARCH_ANY_WORD: Any word
+LBL_SEARCH_ALL_WORDS: All words
+LBL_SEARCH_EXACT: Exact match
+LBL_SKILLS: Required Skills
+LBL_ESCALATE_NO_CASE_SKILLS: Cannot escalate: the case requires no skills
+LBL_ESCALATE_NO_USER_SKILLS: Cannot escalate: no users have skills above currently assigned user
+LBL_ESCALATE_SUCCESS: The case was escalated successfully
+LBL_ESCALATE_BUTTON_TITLE: Escalate
+LBL_ESCALATE_BUTTON_LABEL: Escalate
+LBL_GET_CASE: Get a Case
+LBL_GETCASE_DONE: Case has been assigned to you
+LBL_GETCASE_NO_MATCH: No cases match your skills
+LBL_WHICH_SKILLS: Which skills are you deficient in for this case?
+LBL_DO_ESCALATE: Escalate
+LBL_ESCALATE_SELECT_ONE: Select at least one skill
+LBL_INVOICES_SUBPANEL_TITLE: Invoices
+LBL_INVOICES: Invoices
+LBL_KB_ARTICLES: Knowledge Base Articles
+LBL_CASES_DASHLET: A customizable view into Cases
+LBL_DOCUMENTS: Documents
+LBL_AGE: Age
+LBL_PREPAID_AMOUNTS: Applied Prepaid Amounts
+LBL_LOCATIONS_SUBPANEL_TITLE: Locations
+LBL_LOCATION_NAME: Location
+LBL_THREADS_SUBPANEL_TITLE: Threads
+LBL_THREADS: Threads
+LBL_KB_BUTTON_TITLE: Add to Knowledge Base
+LBL_KB_BUTTON_LABEL: Add to Knowledge Base
+LBL_PRINT_WO_BUTTON_LABEL: Print Service Work Order
+LBL_FILENAME_WORK_ORDER: Service Work Order
+LBL_PREPARED_ORDER: Prepared Order
+LBL_EMAILED_ORDER: Emailed Order
+LBL_PDF_ORDER: Service Work Order
+LBL_PDF_CASE_NUMBER: Case Number
+LBL_PDF_SUBJECT: Subject
+LBL_PDF_NOTES: Case
+LBL_PDF_RESOLUTION: Resolution
+LBL_PDF_DATE: Date
+LBL_PDF_CUSTOMER: Contact
+LBL_PDF_CUSTOMER_REQ_NO: "Customer Req. #"
+LBL_PDF_CUSTOMER_ADDRESS: Account Location
+LBL_PDF_CUSTOMER_PHONE: Contact Phone
+LBL_PDF_ACCEPT_TITLE: Order Approved By
+LBL_PDF_ACCEPT_PRINT_NAME: Print Name
+LBL_PDF_ACCEPT_CUSTOMER_TITLE: Title
+LBL_PDF_ACCEPT_SIGNATURE: Signature
+LBL_PDF_ACCEPT_DATE: Date
+LBL_PDF_INDEX: "#"
+LBL_PDF_BH_TITLE: Booked Hours
+LBL_PDF_BH_SUBJECT: Subject
+LBL_PDF_BH_HOURS: Hours
+LBL_PDF_BH_STATUS: Status
+LBL_PDF_BH_BOOKING_CLASS: Booking Class
+LBL_PDF_BH_DATE: Date
+LBL_PDF_BH_USER: User
+LBL_SP_TITLE: Service Parts
+LBL_SP_NAME: Name
+LBL_SP_CATEGORY: Category
+LBL_SP_TYPE: Type
+LBL_SP_AVAILABLE: Available
+LBL_SP_COST: Cost
+LBL_SP_LIST_PRICE: List Price
+LBL_SP_SELLING_PRICE: Selling Price
+LBL_EXPENSES_SUBPANEL_TITLE: Expense Reports
+LBL_EXPENSE_REPORTS: Expense Reports
+LBL_ADDITIONAL_DETAILS: Case Details
+LBL_PRIMARY_ACCOUNT: Primary Account
+LBL_ADD_SERVICE_PARTS: Add Service Parts
+LBL_ADD_BOOKED_HOURS: Add Booked Hours

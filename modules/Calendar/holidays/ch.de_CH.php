@@ -1,0 +1,30 @@
+<?php ?>
+
+LBL_NAME: Schweizer Feiertage
+LBL_HDY_CH_NEUJAHR: Neujahrstag
+LBL_HDY_CH_BERCHTOLDS: Berchtoldstag
+LBL_HDY_CH_DREIKOENIG: Heilige drei Könige
+LBL_HDY_CH_VALENTINE: Valentinstag
+LBL_HDY_CH_PALMSONNTAG: Palmsonntag
+LBL_HDY_CH_KARFREITAG: Karfreitag
+LBL_HDY_CH_OSTERN: Ostern
+LBL_HDY_CH_OSTERMONTAG: Ostermontag
+LBL_HDY_CH_TAGDERARBEIT: Tag der Arbeit
+LBL_HDY_CH_MUTTERTAG: Muttertag
+LBL_HDY_CH_AUFFAHRT: Auffahrt
+LBL_HDY_CH_PFINGSTEN: Pfingsten
+LBL_HDY_CH_PFINGSTMONTAG: Pfingstmontag
+LBL_HDY_CH_FRONLEICHNAM: Fronleichnam
+LBL_HDY_CH_NATIONALFEIERTAG: Nationalfeiertag Schweiz
+LBL_HDY_CH_MARIAHIMMELFAHRT: Mariä Himmelfahrt
+LBL_HDY_CH_BUSSUNDBETTAG: Eidg. Dank-, Buss- und Bettag
+LBL_HDY_CH_ALLERHEILIGEN: Allerheiligen
+LBL_HDY_CH_MARIAEEMPFAENGNIS: Mariä Empfängnis
+LBL_HDY_CH_HEILIGABEND: Heiliger Abend
+LBL_HDY_CH_WEIHNACHTEN: Weihnachten
+LBL_HDY_CH_STEPHANSTAG: Stephanstag
+LBL_HDY_CH_SILVESTER: Silvester
+LBL_HDY_CH_ADVENT1: Erster Advent
+LBL_HDY_CH_ADVENT2: Zweiter Advent
+LBL_HDY_CH_ADVENT3: Dritter Advent
+LBL_HDY_CH_ADVENT4: Vierter Advent

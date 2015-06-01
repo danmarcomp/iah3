@@ -1,0 +1,99 @@
+<!-- BEGIN: main -->
+<script type="text/javascript" language="Javascript">
+	function set_readonly(form) {
+
+		if (form.save_map.value =='create') {
+			form.save_map_as.readOnly = false;
+			form.save_map_as.style.display = '';
+			form.save_map_as.focus();
+		} else {
+			form.save_map_as.value = "";
+			form.save_map_as.readOnly = true;
+			form.save_map_as.style.display = 'none';
+		}
+	}
+</script>
+
+<table border="0" cellspacing="" cellpadding="0" class="tabDetailView">
+	<tr>
+		<td class="tabDetailViewDL" style="text-align: left;"><strong>{MOD_STRINGS.LBL_DATABASE_FIELD}</strong></td>
+		<!-- BEGIN: header_row -->
+		<td class="tabDetailViewDL" style="text-align: left;"><strong>{MOD_STRINGS.LBL_HEADER_ROW}</strong></td>
+		<!-- END: header_row -->
+		<td class="tabDetailViewDL" style="text-align: left;"><strong>{MOD_STRINGS.LBL_ROW} 1</strong></td>
+		<td class="tabDetailViewDL" style="text-align: left;"><strong>{MOD_STRINGS.LBL_ROW} 2</strong></td>
+		<!-- BEGIN: row3 -->
+		<td class="tabDetailViewDL" style="text-align: left;"><strong>{MOD_STRINGS.LBL_ROW} 3</strong></td>
+		<!-- END: row3 -->
+	</tr>
+	<!-- BEGIN: map_row -->
+	<tr>
+		<td valign="top" align="left" class="tabDetailViewDF">{ROW.DB_FIELD}</td>
+		<td align="left" class="tabDetailViewDF">{ROW.ROW1}</td>
+		<td align="left" class="tabDetailViewDF">{ROW.ROW2}</td>
+		<td align="left" class="tabDetailViewDF">{ROW.ROW3}</td>
+	</tr>
+	<!-- END: map_row -->
+	<tr>
+		<td valign="top" align="left" class="tabDetailViewDF" colspan="4">
+			<h4>{MOD_STRINGS.LBL_MAPPING_ACTION}</h4>
+			<select name="save_map" onchange="set_readonly(this.form)">
+				<option value="">{MOD_STRINGS.LBL_MAPPING_ACTION_NONE}</option>
+				<!-- BEGIN: update_mapping -->
+				<option value="update">{CSV_MAPPING_NAME}</option>
+				<!-- END: update_mapping -->
+				<option value="create">{MOD_STRINGS.LBL_SAVE_AS_MAPPING}:</option>
+			</select>
+			<input type="text" readonly name="save_map_as" style="display:none">
+		</td>
+	</tr>
+</table>
+
+<!-- BEGIN: required_fields -->
+<strong>{MOD_STRINGS.LBL_REQUIRED_MAPPINGS}:</strong>
+<ul>
+	<!-- BEGIN: field -->
+	<li>{FIELD_TITLE}</li>
+	<!-- END: field -->
+</ul>
+<script type="text/javascript" src="include/javascript/yui/build/yahoo/yahoo-min.js"></script>
+<script type="text/javascript" src="include/javascript/yui/build/selector/selector-min.js"></script>
+<script type="text/javascript" src="include/javascript/yui/build/event/event-min.js"></script>
+<script type="text/javascript">
+	var required_mappings = {REQUIRED_MAPPINGS};
+	var required_count = 0;
+
+	function verify_mappings(e) {
+		required_count = 0;
+		var matched = [];
+		var selects = YAHOO.util.Selector.query('select[id^=column_map-]');
+
+		for (var field in required_mappings) {
+			required_count++;
+			for (var s in selects) {
+				if (selects[s].value == field || selects[s].value == field + '/name') {
+					matched.push(field);
+					break;
+				}
+			}
+		}
+
+		if (matched.length < required_count) {
+			var not_selected = [];
+			for (field in required_mappings) {
+				if (matched.indexOf(field) == -1) {
+					not_selected.push(required_mappings[field]);
+				}
+			}
+			alert("{MOD_STRINGS.MSG_REQUIRED_MESSAGE}: " + not_selected.join(', '));
+			YAHOO.util.Event.stopEvent(e);
+		}
+	}
+
+	YAHOO.util.Event.addListener(window, "load", function() {
+		var form = YAHOO.util.Selector.query('#importdb-prepare-form');
+		YAHOO.util.Event.addListener(form, 'submit', verify_mappings);
+	});
+</script>
+<!-- END: required_fields -->
+<!-- END: main -->

@@ -1,0 +1,18 @@
+<?php ?>
+LBL_NAME: Australian Holidays
+LBL_HDY_NEWYEAR: New Year's Day
+LBL_HDY_AUSTRALIA_DAY: Australia Day
+LBL_HDY_LABOR: Labor Day
+LBL_HDY_CHRISTMAS: Christmas Day
+LBL_HDY_EASTER_SUNDAY: Easter Sunday
+LBL_HDY_GOOD_FRIDAY: Good Friday
+LBL_HDY_EASTER_MONDAY: Easter Monday
+LBL_HDY_LABOUR_DAY_WA: Labour Day (WA only)
+LBL_HDY_LABOUR_DAY_TAS_VIC: Labour Day (TAS, VIC)
+LBL_HDY_LABOUR_DAY_QLD: Labour Day (QLD)
+LBL_HDY_LABOUR_DAY_ACT_NSW_SA: Labour Day (ACT, NSW, SA)
+LBL_HDY_ANZAC_DAY: Anzac Day
+LBL_HDY_QUEENS_BIRTHDAY: Queen's Birthday (All states except WA)
+LBL_HDY_CHRISTMAS: Christmas Day
+LBL_HDY_BOXING: Boxing Day
+

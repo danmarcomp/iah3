@@ -1,0 +1,135 @@
+<?php return; /* no output */ ?>
+
+LBL_HOMEPAGE_TITLE: Expense Reports
+LBL_LIST_FORM_TITLE: Expense Reports List
+LBL_LIST_TOTAL: Amount
+LBL_LIST_ASSIGNED_TO_NAME: User
+LBL_LIST_NUMBER: Report Number
+LBL_RELATED_TO: Related to
+LBL_EXPENSE_REPORT_PREFIX: Expense Report Prefix
+LBL_EXPENSE_REPORT_SUFFIX: Expense Report Suffix
+LBL_EXPENSE_REPORT_NUMBER: "Report #"
+LBL_EXPENSE_REPORT_TOTAL: Expense Report Totals
+LBL_STATUS: Status
+LBL_TYPE: Type
+LBL_DESCRIPTION: Notes
+LBL_DATE_SUBMITTED: Date Submitted
+LBL_DATE: Date
+LBL_DATE_APPROVED: Date Approved
+LBL_DATE_PAID: Date Paid
+LBL_ASSIGNED_TO_NAME: Assigned User Name
+LBL_APPROVED_BY: Approved by
+LBL_APPROVED_BY_NAME: Approved User Name
+LBL_AMOUNT: Amount
+LBL_TOTAL_AMOUNT: Total Amount
+LBL_ACCOUNT_NAME: Account
+LBL_REPORT_ID: Report id
+LBL_ITEM_NUMBER: "Item #"
+LBL_EXPENSE_ITEMS: Expense Items
+LBL_EXPENSE_TYPE: Expense Type
+LBL_TOTAL: Total
+LBL_TOTAL_PRETAX: Pre-tax Total
+LBL_AMOUNT_PRETAX: Raw Pre-tax Total
+LBL_TAXES: Taxes
+LBL_TOTAL_USD: Total (%s)
+LNK_NEW_EXPENSE_REPORT: Create Expense Report
+LBL_QUANTITY: Quantity
+LBL_UNIT: Unit
+LNK_REPORTS_LIST: Expense Reports
+NTC_DELETE_CONFIRMATION: Are you sure you want to delete this record?
+LBL_NAME: Name
+LBL_ADD_SPLIT: Add Split
+LBL_SPLIT: Split
+LBL_EXPAND: Expand
+LBL_COLLAPSE: Collapse
+LBL_ADD_RECEIPT: Add Receipt
+LBL_SUBMIT_BUTTON_TITLE: Submit
+LBL_SUBMIT_BUTTON_KEY: ""
+LBL_SUBMIT_BUTTON_LABEL: Submit
+LBL_UNSUBMIT_BUTTON_TITLE: UnSubmit
+LBL_UNSUBMIT_BUTTON_KEY: ""
+LBL_UNSUBMIT_BUTTON_LABEL: UnSubmit
+LBL_APPROVE_BUTTON_TITLE: Approve
+LBL_APPROVE_BUTTON_KEY: ""
+LBL_APPROVE_BUTTON_LABEL: Approve
+LBL_REJECT_BUTTON_TITLE: Reject
+LBL_REJECT_BUTTON_KEY: ""
+LBL_REJECT_BUTTON_LABEL: Reject
+LBL_PAY_BUTTON_TITLE: Mark Paid
+LBL_PAY_BUTTON_KEY: ""
+LBL_PAY_BUTTON_LABEL: Mark Paid
+LBL_LINE_ITEMS: Report Lines
+LBL_CURRENCY: Report Currency
+LBL_ADVANCE_CURRENCY: Advance Currency
+LBL_ADVANCE_EXCHANGE_RATE: Advance Exchange Rate
+LBL_EXCHANGE_RATE: Exchange Rate
+LBL_ATTACHMENT: Attachment
+LBL_CURRENT_ATTACHMENT: Current Attachment
+LBL_REPLACE_ATTACHMENT: Replace Attachment
+LBL_ADD_ATTACHMENT: Add Attachment
+LBL_NOTES_SUBPANEL_TITLE: Receipts and Report PDFs
+LBL_PDF_EXCHANGE_RATE: Exchange Rate Used
+LBL_PDF_INDEX: "#"
+LBL_PDF_CATEGORY: Category
+LBL_PDF_QUANTITY: Quantity
+LBL_PDF_RATE: Rate
+LBL_PDF_AMOUNT:
+	Pre-tax Amount
+	Tax Code
+	Total Incl. Tax
+LBL_PDF_DESCRIPTION: Notes
+LBL_PDF_REPORT_NUMBER: Report Number
+LBL_PDF_DATE: Date
+LBL_PDF_EMPLOYEE: Employee
+LBL_PDF_DATE_APPROVED: Date Approved
+LBL_PDF_APPROVED_BY: Approved By
+LBL_PDF_DATE_PAID: Date Paid
+LBL_PDF_REPORT: Prepare Expense Report
+LBL_PDF_REPORT_TITLE: Expense Report
+LBL_PDF_NOTES: Notes
+LBL_GRAND_TOTALS: Totals
+LBL_PDF_TOTAL: Total
+LBL_PDF_TOTAL_USD: Total (%s)
+LBL_PDF_ADVANCE: Advance
+LBL_PDF_ADVANCE_USD: Advance (%s)
+LBL_PDF_TOTAL_AMOUNT: Amount
+LBL_PDF_AMOUNT_USD: Amount (%s)
+LBL_PDF_CURRENCY: Currency
+LBL_PDF_ADVANCE_HEADER: Advance
+LBL_PDF_TOTAL_HEADER: Total
+LBL_PDF_BALANCE_HEADER: Balance
+LBL_ADVANCE: Advance
+LBL_RAW_ADVANCE: Raw Advance
+LBL_ADVANCE_AMOUNT: Advance Amount
+LBL_ADVANCE_AMOUNT_USD: Advance Amount (%s)
+LBL_BALANCE: Balance
+LBL_RAW_BALANCE: Raw Balance
+LBL_BALANCE_USD: Balance (%s)
+LBL_PDF_ACCEPT_TITLE: Report Approved By
+LBL_PDF_ACCEPT_PRINT_NAME: Print Name
+LBL_PDF_ACCEPT_EMPLOYEE_TITLE: Title
+LBL_PDF_ACCEPT_SIGNATURE: Signature
+LBL_PDF_ACCEPT_DATE: Date
+LBL_PREPARED_REPORT: Prepared report
+LBL_EMAILED_REPORT: Emailed Report
+LBL_PDF_ITEM_DATE: Date
+LBL_PDF_RELATED_TO: This Expense Report is related to
+LBL_PDF_RELATED_ACCOUNT: Account
+LBL_ITEM_DATE: Date
+LBL_ITEM_CATEGORY: Category
+LBL_ITEM_QUANTITY: Quantity
+LBL_ITEM_QTY : Qty.
+LBL_ITEM_PRETAX: Pre-tax
+LBL_ITEM_PRETAX_ABBR: Pre-tax
+LBL_ITEM_TAX: Tax Code
+LBL_ITEM_AMOUNT: Total
+LBL_ITEM_RATE: Rate
+LBL_ITEM_DESCRIPTION: Details
+LBL_RAW_TAX: Raw Taxes
+LBL_TAX: Taxes
+LBL_OK: OK
+LBL_CANCEL: Cancel
+BALANCE_MATH:
+	When a currency other than the system default is used for the Report or Advance Currency, the Balance is calculated as follows: Balance = Total - Advance (all in the default currency). Then the report exchange rate is used to calculate the Balance in the report currency.
+LBL_PAID_RATE: Paid Rate
+LBL_TAX_CLASS: Tax Class

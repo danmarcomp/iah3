@@ -1,0 +1,52 @@
+<!-- BEGIN: main -->
+<style>
+	@media print{
+		.noprint {
+			display: none;
+		}
+	}
+</style>
+
+<p class="noprint">
+<input class="button" onclick="window.print();" type="button" name="button" value=" {APP.LNK_PRINT} ">
+</p>
+
+{IMAGE_HTML}
+
+<!-- BEGIN: GD -->
+<map name="gantt">
+	
+<!-- BEGIN: ProjectTask -->
+<area shape="rect" coords="{area.x1},{area.y1},{area.x2},{area.y2}" href="#" onclick="navigateToTask('{area.data.id}')" title="{area.data.name}">
+<!-- END: ProjectTask -->
+<!-- BEGIN: MoveTask -->
+<area shape="rect" coords="{area.x1},{area.y1},{area.x2},{area.y2}" href="#" onclick="moveTask('{area.data.id}', '{area.direction}')">
+<!-- END: MoveTask -->
+</map>
+
+<script type="text/javascript">
+function navigateToTask(id) {
+	var w = window.opener;
+	if (!w || w.closed) return;
+	w.location.href="index.php?module=ProjectTask&action=DetailView&record=" + id;
+	w.focus();
+	return false;
+}
+
+function moveTask(id, dir)
+{
+	window.location.href='index.php?module=Project&action=gantt&project_id={PROJECT_ID}&image=1&to_pdf=true&move='+id+'&dir=' + dir;
+	return false;
+}
+</script>
+<!-- END: GD -->
+
+<!-- BEGIN: SVG -->
+<!-- BEGIN: ProjectTask -->
+<!-- END: ProjectTask -->
+<!-- BEGIN: MoveTask -->
+<!-- END: MoveTask -->
+<!-- END: SVG -->
+
+<!-- END: main -->
+

@@ -1,0 +1,142 @@
+<!-- BEGIN: main -->
+
+<!-- BEGIN: errors -->
+<p>
+<table width="90%" border="0" cellspacing="0" cellpadding="0" class="tabForm" align="center" id="flash_message">
+<!-- BEGIN: error -->
+	<tr>
+	<td class="dataLabel" width="100%" align="center">
+		<img src="include/images/iah/redled.gif" width="16" height="16" align="absmiddle" alt="">
+		<span style="color: red; font-weight:bold">{ERROR}</span><br>
+	</td>
+	</tr>
+<!-- END: error -->
+</table>
+</p>
+
+<script type="text/javascript" src="{JS_PREFIX}include/javascript/yui/yahoo.js{JS_SUFFIX}" ></script>
+<script type="text/javascript" src="{JS_PREFIX}include/javascript/yui/event.js{JS_SUFFIX}" ></script>
+<script type="text/javascript" src="{JS_PREFIX}include/javascript/yui/dom.js{JS_SUFFIX}" ></script>
+<script type="text/javascript" src="{JS_PREFIX}include/javascript/yui/animation.js{JS_SUFFIX}" ></script>
+
+<script type="text/javascript">
+
+startAnim = function() {  
+   var anim = new YAHOO.util.Anim('flash_message', { opacity: { to: 0 } }, 1, YAHOO.util.Easing.easeOut);
+   anim.onComplete.subscribe(
+	   function() {
+   			var anim2 = new YAHOO.util.Anim('flash_message', { opacity: { to: 100 } }, 1, YAHOO.util.Easing.easeOut);
+   			anim2.animate();
+	   }
+   );
+   anim.animate();
+};
+
+YAHOO.util.Event.on(window, 'load', startAnim, true);
+
+</script>
+
+<!-- END: errors -->
+
+
+<form action="index.php" method="POST">
+	<input type="hidden" name="do_process" value="1">
+	<input type="hidden" name="module" value="Invoice">
+	<input type="hidden" name="action" value="PopupCardPayment">
+	<input type="hidden" name="invoice_id" value="{INVOICE_ID}">
+	
+	
+	
+<p>
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tabForm">
+<tr>
+	<th align="left" class="tabDetailViewDL" colspan="5"><h4 class="tabDetailViewDL">{MOD.LBL_INVOICE_INFO_TITLE}</h4></th>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_INVOICE_SUBJECT}</td>
+	<td class="dataLabel" nowrap="nowrap">{INVOICE_SUBJECT}</td>
+</tr>
+<tr>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_INVOICE_TOTAL}</td>
+	<td class="dataLabel" nowrap="nowrap">{INVOICE_TOTAL} {MERCHANT_TOTAL}</td>
+</tr>
+<tr>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_INVOICE_DUE}</td>
+	<td class="dataLabel" nowrap="nowrap">{INVOICE_DUE} {MERCHANT_DUE}</td>
+</tr>
+<tr>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_PAYMENT_AMOUNT}</td>
+	<td class="dataLabel" nowrap="nowrap">{SYMBOL} <input type=text size="20" name="paymentAmount" value="{PAYMENT_AMOUNT}"></td>
+</table>
+</td></tr></table>
+</p>
+
+<p>
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tabForm">
+<tr>
+	<th align="left" class="tabDetailViewDL" colspan="5"><h4 class="tabDetailViewDL">{MOD.LBL_CC_INFO_TITLE}</h4></th>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_TYPE}</td>
+	<td class="dataLabel" nowrap="nowrap"><select name="cardType">{CARD_TYPE_OPTIONS}</select></td>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_NUMBER}</td>
+	<td class="dataLabel" nowrap="nowrap"><input type=text size="20" name="cardNumber" value="{CARD_NUMBER}"></td>
+<tr>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_EXPIRE}</td>
+	<td class="dataLabel" nowrap="nowrap"><input type=text size="20" name="cardExpiration" value="{CARD_EXPIRATION}"></td>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_CVV}</td>
+	<td class="dataLabel" nowrap="nowrap"><input type=text size="20" name="cardCVV" value="{CARD_CVV}"></td>
+</tr>
+</table>
+</td></tr></table>
+</p>
+
+
+<p>
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tabForm">
+<tr>
+	<th align="left" class="tabDetailViewDL" colspan="5"><h4 class="tabDetailViewDL">{MOD.LBL_CUSTOMER_INFO_TITLE}</h4></th>
+</tr>
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_NAME}</td>
+	<td class="dataLabel" nowrap="nowrap"><input type=text size="20" name="name" value="{NAME}"></td>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_ADDRESS}</td>
+	<td class="dataLabel" nowrap="nowrap"><input type=text size="20" name="address" value="{ADDRESS}"></td>
+</tr>
+<tr>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_CITY}</td>
+	<td class="dataLabel" nowrap="nowrap"><input type=text size="20" name="city" value="{CITY}"></td>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_STATE}</td>
+	<td class="dataLabel" nowrap="nowrap"><input type=text size="20" name="state" value="{STATE}"></td>
+</tr>
+<tr>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_COUNTRY}</td>
+	<td class="dataLabel" nowrap="nowrap"><input type=text size="20" name="country" value="{COUNTRY}"></td>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_POSTALCODE}</td>
+	<td class="dataLabel" nowrap="nowrap"><input type=text size="20" name="postalCode" value="{POSTAL_CODE}"></td>
+</tr>
+<tr>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_PHONE}</td>
+	<td class="dataLabel" nowrap="nowrap"><input type=text size="20" name="phone" value="{PHONE}"></td>
+	<td class="dataLabel" nowrap="nowrap">{MOD.LBL_CC_EMAIL}</td>
+	<td class="dataLabel" nowrap="nowrap"><input type=text size="20" name="email" value="{EMAIL}"></td>
+</tr>
+</table>
+</td></tr></table>
+</p>
+
+
+<input type="submit" value="{MOD.LBL_SUBMIT_CC_PAYMENT}" class="button">
+</form>
+
+<!-- END: main -->
+

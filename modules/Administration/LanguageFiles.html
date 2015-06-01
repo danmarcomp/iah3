@@ -1,0 +1,108 @@
+<!--
+/*****************************************************************************
+ * The contents of this file are subject to The Long Reach Corporation
+ * Software License Version 1.0 ("License"); You may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * <http://www.thelongreach.com/swlicense.html>
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+ * License for the specific language governing rights and limitations under
+ * the License.
+ *
+ * All copies of the Covered Code must include on each user interface screen:
+ * (i) The Long Reach Corporation copyright notice,
+ * (ii) the "Powered by SugarCRM" logo, and
+ * (iii) the SugarCRM copyright notice
+ * in the same form as they appear in the distribution.
+ * See full license for requirements.
+ *
+ * The Original Code is:
+ *    Info At Hand Add-on Module to SugarCRM Open Source project.
+ * The Initial Developer of this Original Code is The Long Reach Corporation
+ * and it is Copyright (C) 2004-2007 by The Long Reach Corporation;
+ * All Rights Reserved.
+ * Portions created by SugarCRM are Copyright (C) 2004-2005 SugarCRM, Inc.;
+ * All Rights Reserved.
+ *****************************************************************************
+ * $Id$
+ * File Description:
+ * Contributor(s):
+*****************************************************************************/
+-->
+
+
+<!-- BEGIN: search -->
+<form>
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="tabForm">
+<tr><td>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	<td class="dataLabel" width="15%" align="right" noWrap><slot>{MOD.LBL_PRIMARY_LANGUAGE}&nbsp;&nbsp;</slot></td>
+	<td class="dataField" width="20%" noWrap>&nbsp;&nbsp;<slot><select name="default_language" class="dataField">{DEF_LANGUAGE_OPTS}</select></slot></td>
+	<td class="dataLabel" width="20%" align="right" noWrap><slot>{MOD.LBL_COMPARISON_LANGUAGE}&nbsp;&nbsp;</slot></td>
+	<td class="dataField" width="35%" noWrap>&nbsp;&nbsp;<slot><select name="language" class="dataField">{ALT_LANGUAGE_OPTS}</select></slot></td>
+	<td class="dataLabel" width="10%" noWrap>
+		<input type="hidden" name="module" value="Administration" />
+		<input type="hidden" name="action" value="LanguageFiles" />
+		<input title="{APP.LBL_SEARCH_BUTTON_TITLE}" accessKey="{APP.LBL_SEARCH_BUTTON_KEY}" class="button" type="submit" name="button" value="{APP.LBL_SEARCH_BUTTON_LABEL}"/>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+</form>
+<p>
+<!-- END: search -->
+
+
+<!-- BEGIN: error_list -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tabForm">
+<tr>
+<td>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<!-- BEGIN: row -->
+	<p>
+	{TYPE}: {MESSAGE}<br>
+	{FILENAME}, line {LINENUM}
+	</p>
+<!-- END: row -->
+	</table>
+</td></tr></table>
+<!-- END: error_list -->
+
+
+<!-- BEGIN: module_list -->
+<table cellpadding="0" cellspacing="0" width="100%" border="0" class="listView">
+	<tr height="20">
+		<td scope="col" width="30%" class="listViewThS1" nowrap><slot>{MOD.LBL_LIST_MODULE_NAME}</slot></td>
+		<td scope="col" width="70%" class="listViewThS1" nowrap><slot>{MOD.LBL_LIST_STATUS}</slot></td>
+	</tr>
+
+<!-- BEGIN: row -->
+	<tr height="20"  onmouseover="setPointer(this, '{KEY}', 'over', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');" onmouseout="setPointer(this, '{KEY}', 'out', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');" onmousedown="setPointer(this, '{KEY}', 'click', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');">
+		<td valign=TOP class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><slot><a href="index.php?module=Administration&action=LanguageFiles&default_language={DEFAULT_LANGUAGE}&language={LANGUAGE}&show_module={VALUE.MODULE_NAME}" class="listViewTdLinkS1">{VALUE.MODULE_NAME}</a></slot></td>
+		<td valign=TOP class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><slot><span class="{VALUE.SPANCLASS}">{VALUE.STATUS}</span></slot></td>
+	</tr>
+	<tr><td colspan="20" class="listViewHRS1"></td></tr>
+<!-- END: row -->
+</table>
+<!-- END: module_list -->
+
+
+
+<!-- BEGIN: field_list -->
+<table cellpadding="0" cellspacing="0" width="100%" border="0" class="listView">
+	<tr height="20">
+		<td scope="col" width="30%" class="listViewThS1" nowrap><slot>{MOD.LBL_LIST_FIELD_NAME}</slot></td>
+		<td scope="col" width="70%" class="listViewThS1" nowrap><slot>{MOD.LBL_LIST_FIELD_VALUE} ({DEFAULT_LANGUAGE})</slot></td>
+	</tr>
+
+<!-- BEGIN: row -->
+	<tr height="20"  onmouseover="setPointer(this, '{VALUE.MODULE_NAME}{VALUE.FIELD_NAME}', 'over', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');" onmouseout="setPointer(this, '{VALUE.MODULE_NAME}{VALUE.FIELD_NAME}', 'out', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');" onmousedown="setPointer(this, '{VALUE.MODULE_NAME}{VALUE.FIELD_NAME}', 'click', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');">
+		<td valign=TOP class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><slot>{VALUE.FIELD_NAME}</slot></td>
+		<td valign=TOP class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><slot>{VALUE.FIELD_VALUE}</slot></td>
+	</tr>
+	<tr><td colspan="20" class="listViewHRS1"></td></tr>
+<!-- END: row -->
+</table>
+<!-- END: field_list -->

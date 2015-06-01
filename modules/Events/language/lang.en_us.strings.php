@@ -1,0 +1,79 @@
+<?php return; /* no output */ ?>
+
+LBL_LIST_FORM_TITLE: Marketing Events List
+LBL_LIST_NAME: Name
+LBL_LIST_SESSION_NUM: "#"
+LBL_LIST_SESSION_NUMBER: "Session #"
+LBL_LIST_SESSION_NAME: Session Name
+LBL_LIST_START: Start
+LBL_LIST_END: End
+LBL_LIST_REGISTERED: Registered
+LBL_LIST_ATTENDED: Attended
+LBL_LIST_DATE_START: Start
+LBL_LIST_DATE_END: End
+LBL_LIST_REGISTRANT_COUNT: Registrants
+LBL_LIST_CAPACITY: Capacity
+LBL_DATE_START: Start Date
+LBL_DATE_END: End Date
+LBL_NAME: Event Name
+LBL_NUM_SESSIONS: Number of sessions
+LBL_DESCRIPTION: Description
+LBL_TYPE: Type
+LBL_FORMAT: Format
+LBL_PRODUCT_NAME: Product
+LBL_SESSION_DETAILS: Session Details
+LBL_SESSION_NUMBER: Session Number
+LBL_START_DATE_TIME: Start Date and Time
+LBL_END_DATE_TIME: End Date and Time
+LBL_NO_GIVEN_DATE: Undefined
+LBL_NO_DATE_START: No Start Date
+LBL_NO_DATE_END: No End Date
+LBL_SESSION_NAME: Session Name
+LBL_URL: Event URL
+LBL_PHONE: Conference Phone
+LBL_PHONE_PASSWORD: Conference Phone Password
+LBL_LOCATION: Location Description
+LBL_LOCATION_URL: Location URL
+LBL_LOCATION_MAPLINK: Location Map URL
+LBL_WEBSITE: Event Website
+LBL_TRACKING_CODE: Tracking Code
+LBL_BREAKFAST: Breakfast Served
+LBL_LUNCH: Lunch Served
+LBL_DINNER: Dinner Served
+LBL_REFRESHMENTS: Refreshments Served
+LBL_PARKING: Parking Instructions
+LBL_SPEAKER1: Event Speaker 1
+LBL_HOST1: Event Host 1
+LBL_SPEAKER2: Event Speaker 2
+LBL_HOST2: Event Host 2
+LBL_SPEAKER3: Event Speaker 3
+LBL_HOST3: Event Host 3
+LBL_SPEAKER4: Event Speaker 4
+LBL_HOST4: Event Host 4
+LBL_SPEAKER5: Event Speaker 5
+LBL_HOST5: Event Host 5
+LBL_EMAIL_CONFIRMATION: Email Confirmation Required
+LBL_ATTENDEE_LIMIT: Attendee Limit
+LBL_ATTENDEE_OVERFLOW: Attendee Overflow
+LBL_CALENDAR_POST: Calendar Post
+LBL_CALENDAR_COLOR: Calendar Color
+LBL_REMINDER_SENT: Reminder Sent
+LBL_REMINDERS: Reminders
+LNK_NEW_EVENT: Create Event
+LNK_EVENTS_LIST: Events List
+LNK_EVENT_TYPES_LIST: Event Types
+LNK_LIST_NEXT: Next Session
+LNK_LIST_PREVIOUS: Previous Session
+LBL_SESSIONS_SUBPANEL_TITLE: Sessions
+LBL_ACCOUNTS_SUBPANEL_TITLE: Accounts
+LBL_LEADS_SUBPANEL_TITLE: Leads
+LBL_CONTACTS_SUBPANEL_TITLE: Contacts
+LBL_SAVE_NEXT_BUTTON_TITLE: Save and Edit Next Session
+LBL_SAVE_NEXT_BUTTON_KEY: N
+LBL_SAVE_NEXT_BUTTON_LABEL: Save and Next
+LBL_SAVE: Save
+LBL_REMINDERS_SUBPANEL_TITLE: Reminders
+LBL_SEARCH_FORM_TITLE: " Events Search "
+LBL_PRODUCT: Product
+LBL_SECURITYGROUPS_SUBPANEL_TITLE: Teams
+LBL_ASSIGNED_TO: Assigned to

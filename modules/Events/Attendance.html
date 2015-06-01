@@ -1,0 +1,47 @@
+<!-- BEGIN: main -->
+
+<h2>{EVENT_NAME}</h2>
+<h4>{CUSTOMER_TYPE_NAME}: {CUSTOMER_NAME}</h4>
+
+<form method="POST" action="index.php">
+	
+<input type="hidden" name="module" value="Events">
+<input type="hidden" name="action" value="Attendance">
+
+<input type="hidden" name="customer_id" value="{CUSTOMER_ID}">
+<input type="hidden" name="type" value="{CUSTOMER_TYPE}">
+<input type="hidden" name="event_id" value="{EVENT_ID}">
+<input type="hidden" name="save" value="1">
+<input type="hidden" name="to_pdf" value="true">
+
+<p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="listView">
+<tr height="20">
+<td scope="col" width="4%" class="listViewThS1">{MOD.LBL_LIST_SESSION_NUM}</td>
+<td scope="col" width="35%" class="listViewThS1">{MOD.LBL_LIST_SESSION_NAME}</td>
+<td scope="col" width="20%" class="listViewThS1">{MOD.LBL_LIST_START}</td>
+<td scope="col" width="20%" class="listViewThS1">{MOD.LBL_LIST_END}</td>
+<td scope="col" width="10%" class="listViewThS1">{MOD.LBL_LIST_REGISTERED}</td>
+<td scope="col" width="10%" class="listViewThS1">{MOD.LBL_LIST_ATTENDED}</td>
+</tr>
+<!-- BEGIN: row -->
+<tr height="20"
+	onmouseover="setPointer(this, '{ROW.ID}', 'over', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');"
+	onmouseout="setPointer(this, '{ROW.ID}', 'out', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');"
+	onmousedown="setPointer(this, '{ROW.ID}', 'click', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');">
+<td scope='row' valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{ROW.session_number}</td>
+<td scope='row' valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{ROW.session_name}</td>
+<td scope='row' valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{ROW.date_start}</td>
+<td scope='row' valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}">{ROW.date_end}</td>
+<td scope='row' valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><input type="checkbox" class="checkbox" value="1" name="registered[{ROW.sess_id}]" {REGISTERED}></td>
+<td scope='row' valign="top" class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><input type="checkbox" class="checkbox" value="1" name="attended[{ROW.sess_id}]" {ATTENDED}></td>
+</tr>
+<tr><td colspan="20" class="listViewHRS1"></td></tr>
+<!-- END: row -->
+</table>
+</p>
+
+<input type="submit" class="button" value="{MOD.LBL_SAVE}">
+</form>
+
+<!-- END: main -->

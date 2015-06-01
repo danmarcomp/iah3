@@ -1,0 +1,22 @@
+<!-- BEGIN: main -->
+<table width="100%" cellpadding="0" cellspacing="0" class="tabDetailView" style="margin-bottom:5px;">
+	<thead>
+		<tr>
+			<th align="left" class="tabDetailViewDL"><h4 class="tabDetailViewDL">{MOD_STRINGS.LBL_IMPORT_ANAME}</h4></th>
+			<th align="left" class="tabDetailViewDL"><h4 class="tabDetailViewDL">{MOD_STRINGS.LBL_INTERNAL_ANAME}</h4></th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN: acc -->
+		<tr>
+			<td width="25%" class="tabDetailViewDL">{ACC.name}</td>
+			<td class="tabDetailViewDF">
+				<select name="import_accounts_name[{ACC.id}]">
+					{ACC.options}
+				</select>
+			</td>
+		</tr>
+		<!-- END: acc -->
+	</tbody>
+</table>
+<!-- END: main -->

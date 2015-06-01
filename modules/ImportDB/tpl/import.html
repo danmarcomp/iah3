@@ -1,0 +1,37 @@
+<!-- BEGIN: main -->
+<!-- BEGIN: message -->
+{MESSAGE}
+<!-- END: message -->
+
+<script type="text/javascript">
+	function importdb_submit_file() {
+		document.getElementById('importdb-data-submit').style.display = 'none';
+		document.getElementById('importdb-data-stub').style.display = '';
+		return true;
+	}
+</script>
+
+<p>{MOD_STRINGS.LBL_IMPORT_DATA_FROM} <strong>{PROFILE.title}</strong></p>
+<p>
+	{MOD_STRINGS.LBL_RECOMMENDED_ORDER}:
+	<!-- BEGIN: ordered_module -->
+	<a href="index.php?module={MOD.name}&amp;action=ImportDB&amp;step=import&amp;profile={PROFILE.name}">{MOD.title}</a>
+	<!-- END: ordered_module -->
+</p>
+
+<form action="index.php?module={MODULE}&amp;action=ImportDB&amp;step=import&amp;profile={PROFILE.name}"
+      method="post" enctype="multipart/form-data" name="ImportForm">
+	{PROFILE_FIELDS}
+	<p style="margin-top: 0.5em">
+		<label for="file-data-file">
+			{MOD_STRINGS.LBL_CSV_DATA_FILE}&nbsp;<span class="required" title="{MOD_STRINGS.LBL_REQUIRED}">*</span>
+		</label>
+		&nbsp;
+		<input type="file" name="data_file" id="file-data-file" class="input-file" />
+		<button type="submit" name="op" id="importdb-data-submit" class="input-button input-outer"
+		       onclick="return importdb_submit_file();" value="1"><div class="input-icon left icon-accept"></div><span class="input-label">{MOD_STRINGS.LBL_MODULE_ACT_IMPORT}</span></button>
+		<button type="button" class="input-button input-outer" name="stub" id="importdb-data-stub" disabled="disabled" style="display:none;"><span class="input-label">{MOD_STRINGS.LBL_WAIT}</span></button>
+	</p>
+</form>
+
+<!-- END: main -->

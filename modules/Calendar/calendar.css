@@ -1,0 +1,465 @@
+/* basic CSS attributes */
+.calendarbox {
+	position: relative;
+	padding-bottom: 10px;
+	overflow: visible;
+	overflow-x: hidden;
+}
+.calendar_outer_table {
+	border-collapse: separate;
+	empty-cells: show;
+}
+.calendar_footer {
+	font-size: 11px;
+	line-height: 11px;
+}
+.calendar_footer_help {
+	text-align: center;
+	white-space: nowrap;
+	margin: 2px;
+}
+
+.calendar_hour_row {
+	height: 20px;
+}
+.calendar_all_day_row {
+	height: 41px;
+}
+.calendar_hour, .calendar_all_day {
+	padding: 0;
+	line-height: 19px;
+	text-align: center;
+	overflow: hidden;
+	width: 46px;
+	min-width: 46px;
+	cursor: default;
+}
+.calendar_hour_content, .calendar_all_day_content {
+	padding: 0;
+	line-height: 5px;
+}
+.week_day_column.week_header {
+	width: 117px;
+	min-width: 117px;
+}
+.calendar_activity_box.summary {
+	z-index: 1;
+	cursor: default;
+}
+.calendar_activity_box .summary_content {
+	height: 34px;
+}
+.calendar_activity_box .summary_details {
+	overflow: hidden;
+	display: none;
+	width: 100%;
+}
+.calendar_activity_box.hover .summary_content {
+	height: auto;
+}
+.calendar_activity_box.hover .summary_details {
+	display: block;
+}
+.week_day_column.calendar_activity_box.summary {
+	width: 115px;
+}
+
+.calendar_activity_box {
+	position: absolute;
+	overflow: hidden;
+	min-height: 19px;
+	max-width: 200px;
+}
+.calendar_activity_box.hover {
+	z-index: 5 !important;
+}
+.calendar_activity_box.hover.can_expand {
+	height: auto !important;
+}
+.calendar_activity_box.hover.can_expand .short_title {
+	display: none;
+}
+.calendar_activity_box.dup {
+}
+.calendar_activity_box .summary_content {
+	margin: 2px;
+}
+
+.can_edit {
+	cursor: pointer;
+}
+
+.activity_top_row {
+	height: 17px;
+	line-height: 17px;
+}
+.activity_top_row td {
+	padding: 0; margin: 0;
+}
+td.activity_content {
+	padding: 1px 2px 2px 2px;
+}
+
+.asyncEditViewHeader {
+	background:#C5C5C5 none repeat scroll 0%;
+	border-color:#BBBBBB #515151 #515151 #EEEEEE;
+	border-style:solid;
+	border-width:1px;
+}
+
+.team_cal_info {
+	padding: 0 0.2em;
+}
+.team_cal_header_min {
+	line-height: 8px;
+	cursor: default;
+}
+.team_cal_user, .team_cal_separator {
+	padding: 2px;
+	min-width: 80px;
+}
+
+.light_cal_activity {
+	border-top:solid 1px #BBBBBB;
+	border-left:solid 1px #BBBBBB;
+	background:#888888;
+	line-height:5px;
+}
+.light_cal_schedule_target {
+	border-top:solid 1px #BBBBBB;
+	border-left:solid 1px #BBBBBB;
+	background:#ee0000;
+	line-height:5px;
+}
+.light_cal_empty {
+	border-top:solid 1px #BBBBBB;
+	border-left:solid 1px #BBBBBB;
+	background:#ffffff;
+	line-height:5px;
+}
+
+.week_header_row {
+	height: 19px;
+}
+.month_header_row {
+	height: 19px;
+}
+.week_header, .week_header_left, .month_header, .month_header_left {
+	line-height: 19px;
+}
+.month_header {
+	min-width: 100px;
+}
+.month_header_left {
+	min-width: 4em;
+	padding: 0 2px;
+	text-align: center;
+}
+
+.month_activity.user_name {
+	padding: 2px;
+}
+.week_user {
+	padding: 2px;
+	min-width: 80px;
+}
+
+table.week_activity_item {
+	font-size: 10px;
+	width:100%;
+}
+a.week_activity_item:link, a.week_activity_item:visited {
+	text-decoration: none;
+}
+a.week_activity_item:hover {
+	text-decoration: underline;
+}
+
+.input_element_s {
+	font-size: 11px;
+	font-weight: normal;
+}
+.toggleTrig {
+	font-size: 11px;
+	font-weight: normal;
+	font-family:sans-serif;
+}
+
+.user_cal_header_min {
+	line-height:7px;
+}
+
+td.year_cal_month + td.year_cal_month {
+	padding-left: 5px;
+}
+td.year_cal_break {
+	line-height: 5px;
+}
+table.year_cal_month {
+	min-width: 8em;
+}
+.year_cal_month_head {
+	line-height: 19px;
+	padding: 0 0.5em;
+}
+.year_cal_day {
+	width: 20px;
+	padding: 1px;
+	vertical-align: top;
+}
+.year_cal_day_content {
+	padding: 1px;
+}
+a.year_cal_day:link, a.year_cal_day:visited {
+	text-decoration: underline;
+}
+a.year_cal_day:hover {
+	text-decoration: underline;
+}
+
+/*.mytask_topview {
+	background:#FFFFFF;
+	border-bottom:solid 1px #BBBBBB;
+}*/
+
+.participant {
+	padding: 0 3px 3px 3px;
+}
+.mask {
+	z-index: 10;
+}
+
+/* default display style (theme can override) */
+.calendar_outer_table {
+	border-right:1px solid #999;
+	border-bottom:1px solid #999;
+	background-color: #fff;
+}
+.calendar_hour, .calendar_all_day, .week_header_left, .month_header_left, .week_user, .team_cal_user, .team_cal_separator {
+	border-top:1px solid #999;
+	border-left:1px solid #bbb;
+	background-color: #eee;
+}
+
+.team_cal_separator {
+	font-weight: bold;
+	text-align: center;
+}
+
+.calendar_hour.half {
+	border-top-style:dotted;
+}
+.calendar_hour_content, .calendar_all_day_content {
+	border-top: 1px solid #ccc;
+	border-left: 3px double #bbb;
+	background-color: #fff;
+}
+.calendar_all_day_content {
+	border-top-color: #bbb;
+}
+.calendar_hour_content.half {
+	border-top-style: dotted;
+}
+.calendar_hour_content.today, .calendar_all_day_content.today {
+	background-color: #fafad2;
+}
+.calendar_activity_box {
+	background-color: #f4f5f7;
+	border: 1px solid #666;
+	-moz-box-shadow: 1px 2px 2px #bbb;
+	-webkit-box-shadow: 1px 2px 2px #bbb;
+}
+.calendar_activity_box.summary {
+	/*border-color: #aaa;*/
+}
+.activity_title {
+	background-color: #c5c5c5;
+	border-color: #eee #666 #666 #eee;
+	border-style: solid;
+	border-width: 1px;
+	line-height: 17px;
+}
+.activity_title img, .activity_title .icon-box, .activity_title .input-icon {
+	vertical-align: bottom;
+	margin-top: -1px;
+}
+.calendar_activity_box.dup {
+	border-color: #e00;
+}
+.week_header, .month_header, .month_header_left.week_start {
+	background-color: #e5e5e5;
+}
+.week_header {
+	border-top: solid 1px #bbb;
+	border-left: double 3px #aaa;
+}
+.month_header {
+	border-top: solid 1px #888;
+	border-left: solid 1px #aaa;
+}
+.week_header, .month_header, .week_header_left.corner, .month_header_left.corner, .month_header_left.week_start {
+	border-bottom: solid 1px #888;
+}
+.month_header_left.week_number {
+	border-top-color: #bbb;
+	line-height: 40px;
+}
+.week_activity {
+	border-top: solid 1px #bbb;
+	border-left: double 3px #bbb;
+	background-color: #fff;
+}
+.week_activity.today, .week_header.today {
+	background-color: #fafad2;
+}
+table.week_activity_item, .team_cal_activity {
+	background-color: #f4f5f7;
+	border: 1px solid #666;
+	-moz-box-shadow: 1px 2px 2px #bbb;
+	-webkit-box-shadow: 1px 2px 2px #bbb;
+}
+.summary_details {
+	border-top: 1px solid #999;
+}
+.summary_details table.week_activity_item {
+	border-color: #999;
+	border-top: none;
+}
+table.week_activity_item.dup, .team_cal_activity.dup {
+	border-left:solid 2px #e00;
+}
+td.week_activity_item {
+	font-size: 10px;
+	padding: 1px 2px;
+	vertical-align: top;
+}
+td.week_activity_item.title {
+	text-align: center;
+	line-height: 13px;
+	padding-top: 3px;
+}
+td.week_activity_item.content {
+	padding: 2px 3px;
+}
+.month_activity {
+	border-top: solid 1px #bbb;
+	border-left: solid 1px #bbb;
+	background-color: #fff;
+}
+.month_header.outside_month {
+	background-color: #ccc;
+}
+.month_activity.outside_month {
+	background-color: #ddd;
+}
+.month_activity.first, .month_header.first, .month_activity.user_name {
+	border-left-width: 3px;
+	border-left-style: double;
+}
+.month_activity.user_name {
+	border-top: 1px solid #666;
+	border-bottom: 1px solid #666;
+}
+.month_activity.today, .month_header.today {
+	background-color: #fafad2;
+}
+.month_activity.hover {
+	background-color: #eee;
+}
+.team_cal_header {
+	background-color: #e5e5e5;
+	border-top:solid 1px #999;
+	border-left:solid 1px #999;
+}
+.team_cal_header_min {
+	border-top: solid 1px #999;
+	border-left: solid 1px #999;
+	background-color: #fff;
+}
+.user_cal_header_min {
+	border-top: solid 1px #bbb;
+	border-left: solid 1px #bbb;
+	background-color: #fff;
+}
+.team_cal_header_min.noleft, .user_cal_header_min.noleft {
+	border-left-style: dotted;
+}
+.team_cal_header_min.hover, .user_cal_header_min.hover {
+	background-color: #ddd;
+}
+.team_cal_empty {
+	border-top: solid 1px #999;
+	border-left: solid 1px #999;
+	background-color: #fff;
+}
+.team_cal_add {
+	border-top: solid 1px #999;
+	border-left: solid 1px #999;
+	background-color: #fff;
+    padding-top:10px;
+    padding-bottom: 10px; 
+    padding-left: 2px;
+}
+table.year_cal_month {
+	border-bottom: solid 1px #999;
+	border-right: solid 1px #999;
+}
+.year_cal_month_head {
+	border-top: solid 1px #bbb;
+	border-left: solid 1px #bbb;
+	border-bottom: solid 1px #888;
+	background-color: #e5e5e5;
+	font-weight: bold;
+	min-width: 90px;
+}
+td.year_cal_day, td.year_cal_day_content {
+	border-top: solid 1px #ccc;
+	border-left: solid 1px #ccc;
+}
+td.year_cal_day {
+	background-color: #eee;
+}
+td.year_cal_day_content {
+	background-color: #fff;
+}
+td.year_cal_day_content.hover {
+	background-color: #eee;
+}
+tr.today td.year_cal_day, tr.today td.year_cal_day_content {
+	background-color: #fafad2;
+}
+.calendar_footer {
+	padding: 1px 3px;
+	border-width: 1px;
+	border-style: solid none;
+}
+.calendar_filter_form {
+	background-color: #eee;
+	border-color: #bbb #515151 #515151 #bbb;
+	border-style: solid;
+	border-width: 1px 1px 2px 1px;
+}
+.calendar_filter_form .filter_field {
+	padding: 2px;
+}
+.week_day {
+	font-weight:bold;
+}
+.week_day.sunday {
+	color: #c00;
+}
+.week_day.saturday {
+	color: #00c;
+}
+span.holiday {
+	font-weight:bold;
+	color: #c00;
+}
+.team_cal_user a:link, .week_header a:link, .week_user a:link, .month_header a:link, .month_header_left a:link, .year_cal_day a:link {
+	text-decoration: none;
+}
+
+.calendarHead .nav-button {
+	vertical-align: middle;
+}
+

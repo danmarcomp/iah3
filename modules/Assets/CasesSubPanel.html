@@ -1,0 +1,106 @@
+<!--
+/*****************************************************************************
+ * The contents of this file are subject to The Long Reach Corporation
+ * Software License Version 1.0 ("License"); You may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ * <http://www.thelongreach.com/swlicense.html>
+ * Software distributed under the License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+ * License for the specific language governing rights and limitations under
+ * the License.
+ *
+ * All copies of the Covered Code must include on each user interface screen:
+ * (i) The Long Reach Corporation copyright notice,
+ * (ii) the "Powered by SugarCRM" logo, and
+ * (iii) the SugarCRM copyright notice
+ * in the same form as they appear in the distribution.
+ * See full license for requirements.
+ *
+ * The Original Code is:
+ *    Info At Hand Add-on Module to SugarCRM Open Source project.
+ * The Initial Developer of this Original Code is The Long Reach Corporation
+ * and it is Copyright (C) 2004-2007 by The Long Reach Corporation;
+ * All Rights Reserved.
+ * Portions created by SugarCRM are Copyright (C) 2004-2005 SugarCRM, Inc.;
+ * All Rights Reserved.
+ *****************************************************************************
+ * $Id$
+ * File Description:
+ * Contributor(s):
+*****************************************************************************/
+-->
+
+<!-- BEGIN: main -->
+
+<table cellpadding="1" cellspacing="0" width="100%" border="0">
+<tr>
+	<td align=left>
+	<form name="ListView" method="POST" action="index.php" >
+
+	<input type="hidden" name="return_module" value="Assets">
+	<input type="hidden" name="return_action" value="DetailView">
+	<input type="hidden" name="return_id" value="{ID}">
+	<input type="hidden" name="module" value="Cases">
+	<input type="hidden" name="action" value="EditView">
+	<input type="hidden" name="asset_id" value="{ID}">
+	<input type="hidden" name="asset_name" value="{NAME}">
+	<input type="hidden" name="asset_serial_no" value="{SERIAL_NO}">
+	<input type="hidden" name="contract_id" value="{CONTRACT_ID}">
+	<input type="hidden" name="contract_name" value="{CONTRACT_NAME}">
+
+
+	<input
+		title="{APP.LBL_CREATE_BUTTON_TITLE}"
+		accessKey="{APP.LBL_CREATE_BUTTON_KEY}"
+		class="button" type="submit"	name="button"
+		value="  {APP.LBL_CREATE_BUTTON_LABEL}  ">
+	</form>
+	</td>
+</tr>
+<tr>
+	<td>
+		<table cellpadding="0" cellspacing="0" width="100%" border="0" class="listView">
+		<!-- BEGIN: list_nav_row -->
+		{PAGINATION}
+		<!-- END: list_nav_row -->
+
+			<tr height="20">
+			<!--<td scope="col" class="listViewThS1" NOWRAP>{CHECKALL}</td>-->
+			<td scope="col" width="3%" class="listViewThS1" NOWRAP><slot><a href="{ORDER_BY}number" class="listViewThLinkS1">{MOD.LBL_LIST_NUMBER}{arrow_start}{number_arrow}{arrow_end}</a></slot></td>
+			<td scope="col" width="27%" class="listViewThS1" NOWRAP><slot><a href="{ORDER_BY}name" class="listViewThLinkS1">{MOD.LBL_LIST_SUBJECT}{arrow_start}{name_arrow}{arrow_end}</a></slot></td>
+			<td scope="col" width="23%" class="listViewThS1" NOWRAP><slot><a href="{ORDER_BY}account_name" class="listViewThLinkS1">{MOD.LBL_LIST_ACCOUNT_NAME}{arrow_start}{account_name_arrow}{arrow_end}</a></slot></td>
+			<td scope="col" width="10%" class="listViewThS1" NOWRAP><slot><a href="{ORDER_BY}priority" class="listViewThLinkS1">{MOD.LBL_LIST_PRIORITY}{arrow_start}{priority_arrow}{arrow_end}</a></slot></td>
+
+			<td scope="col" width="7%" class="listViewThS1" NOWRAP><slot><a href="{ORDER_BY}date_entered" class="listViewThLinkS1">{MOD.LBL_LIST_AGE}{arrow_start}{date_entered_arrow}{arrow_end}</a></slot></td>
+
+
+			<!-- BEGIN: open_source -->
+			<!-- END: open_source -->
+			<td scope="col" width="9%" class="listViewThS1" NOWRAP><slot>{APP.LBL_LIST_ASSIGNED_USER}</slot></td>
+			</tr>
+
+
+		<!-- BEGIN: row -->
+		<tr height="20"  onmouseover="setPointer(this, '{CASE.NUMBER}', 'over', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');" onmouseout="setPointer(this, '{CASE.NUMBER}', 'out', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');" onmousedown="setPointer(this, '{CASE.NUMBER}', 'click', '{BG_COLOR}', '{BG_HILITE}', '{BG_CLICK}');">
+			<!--<td class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}" valign='top'>{PREROW}</td>-->
+			<td valign=TOP class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><slot>{CASE.NUMBER}</slot></td>
+			<td scope='row' valign=TOP class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><slot><a href="{URL_PREFIX}index.php?action=DetailView&module=Cases&record={CASE.ID}" class="listViewTdLinkS1">{CASE.NAME}</a></slot></td>
+			<td valign=TOP class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><slot><a href="{URL_PREFIX}index.php?action=DetailView&module=Accounts&record={CASE.ACCOUNT_ID}" class="listViewTdLinkS1">{CASE.ACCOUNT_NAME}</A></slot></td>
+			<td valign=TOP class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><slot>{CASE.PRIORITY}</slot></td>
+
+			<td valign=TOP class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"><slot>{CASE.AGE}</slot></td>
+
+
+
+				<!-- BEGIN: open_source -->
+				<!-- END: open_source -->
+				<td valign=TOP class="{ROW_COLOR}S1" bgcolor="{BG_COLOR}"  nowrap><slot>{CASE.ASSIGNED_USER_NAME}</slot></td>
+
+		</tr>
+		<tr><td colspan="20" class="listViewHRS1"></td></tr>
+		<!-- END: row -->
+			</table>
+	</td>
+</tr>
+</table>
+<!-- END: main -->

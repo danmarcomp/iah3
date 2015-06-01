@@ -1,0 +1,20 @@
+<!-- BEGIN: main -->
+<!-- BEGIN: message -->
+{MESSAGE}
+<!-- END: message -->
+
+<p>{MOD_STRINGS.MSG_PREPARE_TO_IMPORT}</p>
+<p>{MOD_STRINGS.MSG_MAP_DATA} {MOD_STRINGS.MSG_MAP_NOT_SAME}</p>
+<form action="index.php?module={MODULE}&amp;action=ImportDB&amp;step=prepare&amp;profile={PROFILE.name}"
+      method="post" id="importdb-prepare-form">
+	<div>
+		{PREPARE}
+	</div>
+	<div style="margin-top:0.5em;">
+		<button type="submit" name="op" value="1" class="input-button input-outer">
+			<div class="input-icon left icon-accept"></div>
+			<span class="input-label">{MOD_STRINGS.LBL_CONTINUE}</span>
+		</button>
+	</div>
+</form>
+<!-- END: main -->

@@ -1,0 +1,87 @@
+<!--
+/*
+ * The contents of this file are subject to the SugarCRM Public License Version
+ * 1.1.3 ("License"); You may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at http://www.sugarcrm.com/SPL
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.  See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * All copies of the Covered Code must include on each user interface screen:
+ *    (i) the "Powered by SugarCRM" logo and
+ *    (ii) the SugarCRM copyright notice
+ * in the same form as they appear in the distribution.  See full license for
+ * requirements.
+ *
+ * The Original Code is: SugarCRM Open Source
+ * The Initial Developer of the Original Code is SugarCRM, Inc.
+ * Portions created by SugarCRM are Copyright (C) 2004-2006 SugarCRM, Inc.;
+ * All Rights Reserved.
+ * Contributor(s): ______________________________________.
+ */
+-->
+<!-- BEGIN: main -->
+<!-- BEGIN: SearchHeader -->
+<form action="index.php" method="post" name="popup_query_form" id="popup_query_form">
+<input type="hidden" name="module" value="{MODULE_NAME}" />
+<input type="hidden" name="action" value="reassign{MODULE_NAME}" />
+<input type="hidden" name="query" value="true" />
+<input type="hidden" name="to_pdf" value="true" />
+<input type="hidden" name="request_data" value="{request_data}" />
+<input type="hidden" name="populate_parent" value="false" />
+<input type="hidden" name="inline" value="{INLINE}" />
+<input type="hidden" name="mode" value="{MULTI_SELECT}" />
+<input type="hidden" name="hide_clear_button" value="{hide_clear_button}" />
+<!-- END: SearchHeader -->
+
+<table cellpadding="2" cellspacing="2" border="0" width="100%" class="tabForm">
+<tr><td width="30%" valign="middle">
+<b>{MOD.LBL_REASSIGN_AC_TO}</b>
+</td>
+<td width="70%" colspan="2" valign="middle"><select name="cmbUserList" id="cmbUserList">
+<!-- BEGIN: row -->
+<option value="{USER.ID}">{USER.USER_NAME}</option>
+<!-- END: row -->
+</select></td>
+</tr>
+
+
+<tr valign="top"><td rowspan="7">
+<b>{MOD.LBL_REASSIGN_REL_DATA}</b>
+</td>
+  <td width="1%" scope='row' valign="middle"><input name="chkRelatedData[]" type="checkbox" value="Contacts" class="checkbox" checked="checked"></td>
+  <td width="79%" scope='row' valign="middle">{MOD.LBL_ASSIGN_RELATED_CONTACTS}</td>
+</tr>
+<tr >
+  <td valign='middle'><input name="chkRelatedData[]" type="checkbox" value="Activities" class="checkbox" checked="checked"></td>
+  <td valign='middle'>{MOD.LBL_ASSIGN_RELATED_ACTIVITIES}</td>
+</tr>
+<tr>
+  <td scope='row' valign="middle"><input name="chkRelatedData[]" type="checkbox" value="History" class="checkbox" checked="checked"></td>
+  <td scope='row' valign="middle">{MOD.LBL_ASSIGN_RELATED_HISTORY}</td>
+</tr>
+<tr>
+  <td valign='middle'><input name="chkRelatedData[]" type="checkbox" value="Quotes" class="checkbox" checked="checked"></td>
+  <td valign='middle'>{MOD.LBL_ASSIGN_RELATED_QUOTES}</td>
+</tr>
+<tr>
+  <td valign="middle"><input name="chkRelatedData[]" type="checkbox" value="Invoices" class="checkbox" checked="checked"></td>
+  <td valign="middle">{MOD.LBL_ASSIGN_RELATED_INVOICES}</td>
+</tr>
+<tr>
+  <td valign="middle"><input name="chkRelatedData[]" type="checkbox" value="Opportunities" class="checkbox" checked="checked"></td>
+  <td valign="middle">{MOD.LBL_ASSIGN_RELATED_OPPURTUNITIES}</td>
+</tr>
+<tr>
+  <td valign="middle"><input name="chkRelatedData[]" type="checkbox" value="Cases" class="checkbox" checked="checked"></td>
+  <td valign="middle">{MOD.LBL_ASSIGN_RELATED_CASES}</td>
+</tr>
+<tr valign="middle"><td colspan="3"><input name="btnReassign" type="submit" class="button" value="{MOD.LBL_REASSIGN_ACCOUNTS}" title="{MOD.LBL_REASSIGN_ACCOUNTS}">
+&nbsp;<input type='button' name='button' class='button' onclick="(window.opener || window).document.forms['MassUpdate'].uid.value=''; do_close_popup(true);" title='{APP.LBL_CANCEL_BUTTON_TITLE}' accesskey='X' value='  {APP.LBL_CANCEL_BUTTON_LABEL}  ' /></td>
+</tr>
+</table>
+</form>
+{ASSOCIATED_JAVASCRIPT_DATA}
+<!-- END: main -->
+

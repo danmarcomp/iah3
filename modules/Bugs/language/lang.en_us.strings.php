@@ -1,0 +1,74 @@
+<?php return; /* no output */ ?>
+
+LBL_MODULE_ID: Software Bugs
+LBL_SEARCH_FORM_TITLE: Bug Search
+LBL_LIST_FORM_TITLE: Bug List
+LBL_NEW_FORM_TITLE: New Bug
+LBL_CONTACT_BUG_TITLE: Contact-Bug
+LBL_SUBJECT: Subject
+LBL_BUG: Bug
+LBL_BUG_NUMBER: Bug Number
+LBL_NUMBER: Number
+LBL_STATUS: Status
+LBL_PRIORITY: Priority
+LBL_DESCRIPTION: Description
+LBL_CONTACT_NAME: Contact Name
+LBL_BUG_SUBJECT: Bug Subject
+LBL_CONTACT_ROLE: Role
+LBL_LIST_NUMBER: "Bug #"
+LBL_LIST_SUBJECT: Subject
+LBL_LIST_STATUS: Status
+LBL_LIST_PRIORITY: Priority
+LBL_LIST_RELEASE: Found In
+LBL_LIST_RESOLUTION: Resolution
+LBL_LIST_LAST_MODIFIED: Last Modified
+LBL_INVITEE: Contacts
+LBL_TYPE: Type
+LBL_LIST_TYPE: Type
+LBL_RESOLUTION: Resolution
+LBL_RELEASE: Release
+LNK_NEW_BUG: Report Bug
+LNK_BUG_LIST: Bugs
+NTC_REMOVE_INVITEE: Are you sure you want to remove this contact from the bug?
+NTC_REMOVE_ACCOUNT_CONFIRMATION: Are you sure you want to remove this bug from this account?
+ERR_DELETE_RECORD: A record number must be specified to delete the bug.
+LBL_LIST_MY_BUGS: My Assigned Bugs
+LBL_FOUND_IN_RELEASE: Found in Release
+LBL_FIXED_IN_RELEASE: Fixed in Release
+LBL_LIST_FIXED_IN_RELEASE: Fixed In
+LBL_WORK_LOG: Work Log
+LBL_SOURCE: Source
+LBL_PRODUCT_CATEGORY: Category
+LBL_CREATED_BY: Created by
+LBL_DATE_CREATED: Create Date
+LBL_MODIFIED_BY: Last Modified by
+LBL_DATE_LAST_MODIFIED: Modify Date
+LBL_LIST_EMAIL_ADDRESS: Email Address
+LBL_LIST_CONTACT_NAME: Contact Name
+LBL_LIST_ACCOUNT_NAME: Account Name
+LBL_LIST_PHONE: Phone
+NTC_DELETE_CONFIRMATION: Are you sure you want to remove this contact from this bug?
+LBL_DEFAULT_SUBPANEL_TITLE: Software Bugs
+LBL_ACTIVITIES_SUBPANEL_TITLE: Activities
+LBL_HISTORY_SUBPANEL_TITLE: History
+LBL_CONTACTS_SUBPANEL_TITLE: Contacts
+LBL_ACCOUNTS_SUBPANEL_TITLE: Accounts
+LBL_CASES_SUBPANEL_TITLE: Cases
+LBL_SYSTEM_ID: System ID
+LBL_LIST_ASSIGNED_TO_NAME: Assigned User
+LBL_SECURITYGROUPS_SUBPANEL_TITLE: Teams
+LBL_PLANNED_FOR_RELEASE_ID: Planned for Release ID
+LBL_PLANNED_FOR_RELEASE: Planned for Release
+LBL_LIST_PRODUCT_NAME: Product
+LBL_LIST_PLANNED_FOR_RELEASE: Planned For
+LBL_PRODUCT: Product
+LNK_RELEASES: Releases
+LNK_PRODUCTS: Products
+LNK_CREATE_PRODUCTS: Create Product
+MY_BUGS_DASHLET: A customizable view into Bugs
+LBL_IS_PRIVATE: Private in Customer Portal
+LBL_THREADS_SUBPANEL_TITLE: Threads
+LBL_THREADS: Threads
+LBL_ADDITIONAL_DETAILS: Bug Details
+LBL_PRIMARY_ACCOUNT: Primary Account
+LBL_PRIMARY_CONTACT: Primary Contact
